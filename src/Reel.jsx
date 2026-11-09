@@ -74,6 +74,7 @@ const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 
 // 마지막 단어와 빨간 점이 줄바꿈으로 떨어지지 않게 묶음
 const WithDot = ({text}) => {
+  if (/[?!…]$/.test(text)) return <>{text}</>; // 물음표·느낌표 뒤에는 점 생략
   const i = text.lastIndexOf(' ');
   return <>{i >= 0 ? text.slice(0, i + 1) : ''}<span style={{whiteSpace: 'nowrap'}}>{text.slice(i + 1)}<Dot /></span></>;
 };
