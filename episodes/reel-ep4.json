@@ -1,7 +1,7 @@
 {
   "video": "reel-ep4.mp4",
   "style": "B",
-  "durationSec": 25.1,
+  "durationSec": 23.3,
   "seriesTitle": "Move to Find Yourself",
   "episode": 4,
   "episodeTitle": "호기심",
@@ -51,7 +51,7 @@
     },
     {
       "start": 19.7,
-      "end": 24.2,
+      "end": 23.3,
       "small": "첫 직장 창립 멤버로 대표님들을 인터뷰하며",
       "big": "질문하는 게 일이 됐어요",
       "en": "As a founding member at my first job, I interviewed CEOs. Asking questions became my job."
@@ -66,7 +66,7 @@
     },
     {
       "start": 19.8,
-      "end": 24.2,
+      "end": 23.3,
       "text": "호기심",
       "font": "myeongjo"
     }
