@@ -18,24 +18,29 @@ const Dot = () => (
 
 // layout: "cover"(화면 꽉 채우기, imagePosition으로 위치 조정)
 //         "inset"(사진을 아래쪽에 두고 위 빈 곳은 같은 사진을 흐리게 깔기 — 얼굴이 사진 위쪽에 있을 때)
-const Background = ({image, layout, imagePosition}) => {
+const Background = ({image, layout, imagePosition, fill, fillColor}) => {
   if (layout === 'inset') {
+    // 위 빈 곳 채우는 방식: "color"(사진 위쪽 벽 색으로) · "black"(검은 띠) · "blur"(같은 사진 흐리게)
+    const fade = fill === 'black' ? 'transparent 0, #000 2%' : 'transparent 0, #000 14%';
+    const back = fill === 'blur'
+      ? <Img src={staticFile(image)} style={{position: 'absolute', inset: 0, width: '100%', height: '100%',
+          objectFit: 'cover', filter: 'blur(40px) brightness(.55)', transform: 'scale(1.15)'}} />
+      : <AbsoluteFill style={{background: fill === 'black' ? BRAND.black : fillColor}} />;
     return (
       <>
-        <Img src={staticFile(image)} style={{position: 'absolute', inset: 0, width: '100%', height: '100%',
-          objectFit: 'cover', filter: 'blur(40px) brightness(.55)', transform: 'scale(1.15)'}} />
+        {back}
         <Img src={staticFile(image)} style={{position: 'absolute', left: 0, bottom: 0, width: '100%', height: 'auto',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 12%)', maskImage: 'linear-gradient(to bottom, transparent 0, #000 12%)'}} />
+          WebkitMaskImage: `linear-gradient(to bottom, ${fade})`, maskImage: `linear-gradient(to bottom, ${fade})`}} />
       </>
     );
   }
   return <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: imagePosition}} />;
 };
 
-export const Cover = ({image, layout = 'cover', imagePosition = '50% 50%', seriesTitle, episode, episodeTitle, titleTop = 1180}) => (
+export const Cover = ({image, layout = 'cover', imagePosition = '50% 50%', fill = 'color', fillColor = '#6b5d48', seriesTitle, episode, episodeTitle, titleTop = 1180}) => (
   <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif', color: BRAND.white}}>
     <style>{fontCss}</style>
-    <Background image={image} layout={layout} imagePosition={imagePosition} />
+    <Background image={image} layout={layout} imagePosition={imagePosition} fill={fill} fillColor={fillColor} />
     <AbsoluteFill style={{background:
       'linear-gradient(to bottom,rgba(0,0,0,.55) 0,rgba(0,0,0,.25) 20%,rgba(0,0,0,0) 32%,rgba(0,0,0,0) 48%,rgba(0,0,0,.6) 64%,rgba(0,0,0,.7) 85%,rgba(0,0,0,.55) 100%)'}} />
 

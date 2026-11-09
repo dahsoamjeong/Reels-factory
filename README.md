@@ -58,7 +58,9 @@ npx remotion render src/index.jsx Reel out/ep07.mp4 --props=episodes/ep07.json
 
 1. 표지로 쓸 장면을 `public/`에 이미지로 넣어요. (예: `public/cover-ep3.jpg`, 1080×1920)
 2. `covers/ep1.json`을 복사해서 바꿔요. 제목 줄바꿈은 `\n`으로 정해요.
-   - `layout`: `"cover"`(화면 꽉 채우기, 기본) · `"inset"`(얼굴이 사진 위쪽에 있어 이름표에 가릴 때 — 사진을 아래로 내리고 위는 흐리게 채움)
+   - `layout`: `"cover"`(화면 꽉 채우기, 기본) · `"inset"`(얼굴이 사진 위쪽에 있어 이름표에 가릴 때 — 사진을 아래로 내리고 위 빈 곳을 채움)
+   - `fill`: `"inset"`일 때 위 빈 곳 채우는 방식 — `"color"`(기본, `fillColor` 색으로 자연스럽게) · `"black"` · `"blur"`
+   - `fillColor`: 사진 맨 위 배경색과 맞춰요 (예: 벽 색 `"#83744b"`)
    - `imagePosition`: `"cover"`일 때 사진 위치 (예: 인물이 오른쪽이면 `"85% 50%"`)
 3. 렌더링해요.
 
