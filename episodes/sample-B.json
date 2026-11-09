@@ -15,7 +15,8 @@
       "end": 7.4,
       "small": "완벽하지 않아도",
       "big": "충분히 괜찮더라고요",
-      "en": "It turns out, not being perfect is more than okay."
+      "en": "It turns out, not being perfect is more than okay.",
+      "font": "myeongjo"
     },
     {
       "start": 7.5,
@@ -29,7 +30,8 @@
     {
       "start": 1.6,
       "end": 3.4,
-      "text": "완벽"
+      "text": "완벽",
+      "font": "myeongjo"
     },
     {
       "start": 7.6,

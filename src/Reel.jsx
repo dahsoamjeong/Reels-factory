@@ -28,12 +28,12 @@ const STYLES = {
     scatter: {fontWeight: 800, fontSize: 50, letterSpacing: '-0.03em'},
   },
   B: {
-    koFont: '"Do Hyeon"', enFont: 'Oswald',
-    small: {fontSize: 52},
-    big: {fontSize: 92, lineHeight: 1.08},
+    koFont: 'Pretendard', enFont: 'Oswald', tagWeight: 800,
+    small: {fontWeight: 700, fontSize: 46, letterSpacing: '-0.03em'},
+    big: {fontWeight: 900, fontSize: 80, letterSpacing: '-0.04em', lineHeight: 1.1},
     en: {fontSize: 36, marginTop: 12},
-    pop: {fontSize: 220},
-    scatter: {fontSize: 54},
+    pop: {fontWeight: 900, fontSize: 200, letterSpacing: '-0.06em'},
+    scatter: {fontWeight: 800, fontSize: 50, letterSpacing: '-0.03em'},
   },
 };
 
@@ -53,6 +53,15 @@ const withFont = (st, font) => {
     pop: {...st.pop, fontWeight: w.pop}, scatter: {...st.scatter, fontWeight: w.scatter},
   };
 };
+
+// 포인트 글꼴: 자막 한 줄이나 강조 단어에 "font": "myeongjo"를 붙이면 그 부분만 바뀜
+// (작은 줄·영어 번역은 읽기 쉽게 항상 기본 글꼴 유지)
+const ACCENT = {
+  myeongjo: {fontFamily: '"Nanum Myeongjo"', fontWeight: 800, letterSpacing: '-0.02em',
+    textShadow: '0 2px 3px rgba(0,0,0,.55), 0 3px 18px rgba(0,0,0,.6)'},
+  dohyeon: {fontFamily: '"Do Hyeon"', fontWeight: 400, letterSpacing: '0'},
+};
+const accent = (font) => ACCENT[font] || {};
 
 const fontCss = `
 @font-face{font-family:Pretendard;font-weight:500;src:url(${staticFile('fonts/Pretendard-Medium.woff2')})}
@@ -86,7 +95,7 @@ const SeriesTag = ({title, episode, styleName, st}) => {
     return (
       <div style={{position: 'absolute', top: 150, left: 72, opacity: s, transform: `translateY(${slide}px)`,
         color: BRAND.white, textShadow: '0 2px 12px rgba(0,0,0,.5)'}}>
-        <span style={{fontFamily: st.koFont, fontWeight: st.tagWeight || 400, fontSize: 52, borderBottom: `6px solid ${BRAND.red}`, paddingBottom: 6}}>{title}</span>
+        <span style={{fontFamily: st.koFont, fontWeight: st.tagWeight || 800, fontSize: 48, letterSpacing: '-0.02em', borderBottom: `6px solid ${BRAND.red}`, paddingBottom: 6}}>{title}</span>
         <div style={{fontFamily: 'Oswald', fontSize: 28, letterSpacing: '0.08em', marginTop: 16, opacity: 0.9}}>
           {episode ? `EP.${String(episode).padStart(2, '0')} — ` : ''}{BRAND.name}<Dot />
         </div>
@@ -109,7 +118,7 @@ const SeriesTag = ({title, episode, styleName, st}) => {
 };
 
 // 기본 자막: 작은 줄 + 큰 줄 + 영어 번역
-const Caption = ({small, big, en, durationInFrames, st}) => {
+const Caption = ({small, big, en, font, durationInFrames, st}) => {
   const frame = useCurrentFrame();
   const enter = interpolate(frame, [0, 6], [0, 1], clamp);
   const exit = interpolate(frame, [durationInFrames - 4, durationInFrames], [1, 0], clamp);
@@ -120,14 +129,14 @@ const Caption = ({small, big, en, durationInFrames, st}) => {
       opacity: enter * exit, transform: `translateY(${interpolate(enter, [0, 1], [18, 0])}px)`,
     }}>
       {small && <div style={{fontFamily: st.koFont, ...st.small, opacity: 0.95}}>{small}</div>}
-      <div style={{fontFamily: st.koFont, ...st.big}}><WithDot text={big} /></div>
+      <div style={{fontFamily: st.koFont, ...st.big, ...accent(font)}}><WithDot text={big} /></div>
       {en && <div style={{fontFamily: st.enFont, ...st.en, opacity: 0.85}}>{en}</div>}
     </div>
   );
 };
 
 // 강조 1: 큰 단어가 화면 가운데에 튀어나옴
-const Pop = ({text, durationInFrames, st}) => {
+const Pop = ({text, font, durationInFrames, st}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const s = spring({frame, fps, config: {damping: 12, stiffness: 180}});
@@ -138,13 +147,14 @@ const Pop = ({text, durationInFrames, st}) => {
       fontFamily: st.koFont, ...st.pop, color: BRAND.white,
       textShadow: '0 6px 30px rgba(0,0,0,.4)', opacity: Math.min(s, 1) * exit,
       transform: `scale(${interpolate(s, [0, 1], [0.6, 1])})`,
+      ...accent(font),
     }}><WithDot text={text} /></div>
   );
 };
 
 // 강조 2: 짧은 문구들이 화면 곳곳에 차례로 떠오름 (흰색/빨강 번갈아)
 const SPOTS = [[640, 470], [90, 640], [560, 820], [150, 960], [600, 380], [110, 520]];
-const Scatter = ({texts, durationInFrames, st}) => {
+const Scatter = ({texts, font, durationInFrames, st}) => {
   const frame = useCurrentFrame();
   const exit = interpolate(frame, [durationInFrames - 5, durationInFrames], [1, 0], clamp);
   return (
@@ -158,6 +168,7 @@ const Scatter = ({texts, durationInFrames, st}) => {
             fontFamily: st.koFont, ...st.scatter, color: i % 2 ? BRAND.red : BRAND.white,
             textShadow: '0 2px 4px rgba(0,0,0,.6), 0 2px 16px rgba(0,0,0,.5)',
             opacity: appear * exit, transform: `translateY(${interpolate(appear, [0, 1], [12, 0])}px)`,
+            ...accent(font),
           }}>{t}</div>
         );
       })}
@@ -180,8 +191,8 @@ export const Reel = ({video, style = 'A', font, seriesTitle, episode, captions =
         return (
           <Sequence key={'p' + i} from={f(p.start)} durationInFrames={d} layout="none">
             {p.scatter
-              ? <Scatter texts={p.scatter} durationInFrames={d} st={st} />
-              : <Pop text={p.text} durationInFrames={d} st={st} />}
+              ? <Scatter texts={p.scatter} font={p.font} durationInFrames={d} st={st} />
+              : <Pop text={p.text} font={p.font} durationInFrames={d} st={st} />}
           </Sequence>
         );
       })}

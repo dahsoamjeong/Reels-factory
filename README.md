@@ -7,7 +7,7 @@ SOAMING LAB 릴스를 **같은 디자인으로 공장처럼** 찍어내는 편�
 
 | | A. 클린 랩 (기본) | B. 에디토리얼 |
 |---|---|---|
-| 글꼴 | Pretendard | Do Hyeon + Oswald |
+| 글꼴 | Pretendard | Pretendard + Oswald(영어) |
 | 이름표 | 가운데 검은 박스 | 왼쪽 빨간 밑줄 + 회차 |
 | 어울리는 영상 | 대부분의 인터뷰 | 감성적인 이야기, 가끔 변화 줄 때 |
 
@@ -36,7 +36,10 @@ SOAMING LAB 릴스를 **같은 디자인으로 공장처럼** 찍어내는 편�
 ```
 
 - `style`: `"A"` 또는 `"B"`
-- `font` (선택): `"pretendard"` · `"myeongjo"`(나눔명조) · `"dohyeon"` — 스타일의 기본 글꼴 대신 이 글꼴을 써요
+- **포인트 글꼴(가끔 쓰기)**: 자막 한 줄이나 강조 단어에 `"font": "myeongjo"`를 붙이면 그 부분만 나눔명조로 바뀌어요.
+  작은 줄과 영어 번역은 읽기 쉽게 항상 Pretendard로 남아요.
+  예: `{"start": 1.6, "end": 3.4, "text": "완벽", "font": "myeongjo"}`
+- `font` (영상 전체, 선택): `"pretendard"` · `"myeongjo"` · `"dohyeon"` — 스타일 기본 글꼴을 통째로 바꿀 때만 써요
 - `episode`: 넣으면 이름표에 `EP.07`이 붙어요 (빼도 돼요)
 - `pops`: `text`는 큰 강조 단어, `scatter`는 화면 곳곳에 떠오르는 짧은 문구 (A·B 모두 사용 가능)
 
