@@ -5,6 +5,9 @@ import {
 } from 'remotion';
 import '@fontsource/do-hyeon/400.css';
 import '@fontsource/oswald/400.css';
+import '@fontsource/nanum-myeongjo/400.css';
+import '@fontsource/nanum-myeongjo/700.css';
+import '@fontsource/nanum-myeongjo/800.css';
 
 // ── 브랜드 설정 (여기만 바꾸면 모든 영상에 적용) ──────────────
 export const BRAND = {
@@ -34,6 +37,23 @@ const STYLES = {
   },
 };
 
+// ── 글꼴 바꾸기: 설정 파일에 "font": "pretendard" | "myeongjo" | "dohyeon" ──
+const FONTS = {
+  pretendard: {koFont: 'Pretendard', weights: {small: 700, big: 900, pop: 900, scatter: 800, tag: 900}},
+  myeongjo: {koFont: '"Nanum Myeongjo"', enFont: '"Nanum Myeongjo"', weights: {small: 700, big: 800, pop: 800, scatter: 800, tag: 800}},
+  dohyeon: {koFont: '"Do Hyeon"', weights: {small: 400, big: 400, pop: 400, scatter: 400, tag: 400}},
+};
+const withFont = (st, font) => {
+  const f = FONTS[font];
+  if (!f) return st;
+  const w = f.weights;
+  return {
+    ...st, koFont: f.koFont, enFont: f.enFont || st.enFont, tagWeight: w.tag,
+    small: {...st.small, fontWeight: w.small}, big: {...st.big, fontWeight: w.big},
+    pop: {...st.pop, fontWeight: w.pop}, scatter: {...st.scatter, fontWeight: w.scatter},
+  };
+};
+
 const fontCss = `
 @font-face{font-family:Pretendard;font-weight:500;src:url(${staticFile('fonts/Pretendard-Medium.woff2')})}
 @font-face{font-family:Pretendard;font-weight:700;src:url(${staticFile('fonts/Pretendard-Bold.woff2')})}
@@ -57,7 +77,7 @@ const Dot = () => (
 );
 
 // 화면 위쪽 시리즈 이름표
-const SeriesTag = ({title, episode, styleName}) => {
+const SeriesTag = ({title, episode, styleName, st}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const s = spring({frame, fps, config: {damping: 200}, durationInFrames: 12});
@@ -66,7 +86,7 @@ const SeriesTag = ({title, episode, styleName}) => {
     return (
       <div style={{position: 'absolute', top: 150, left: 72, opacity: s, transform: `translateY(${slide}px)`,
         color: BRAND.white, textShadow: '0 2px 12px rgba(0,0,0,.5)'}}>
-        <span style={{fontFamily: '"Do Hyeon"', fontSize: 52, borderBottom: `6px solid ${BRAND.red}`, paddingBottom: 6}}>{title}</span>
+        <span style={{fontFamily: st.koFont, fontWeight: st.tagWeight || 400, fontSize: 52, borderBottom: `6px solid ${BRAND.red}`, paddingBottom: 6}}>{title}</span>
         <div style={{fontFamily: 'Oswald', fontSize: 28, letterSpacing: '0.08em', marginTop: 16, opacity: 0.9}}>
           {episode ? `EP.${String(episode).padStart(2, '0')} — ` : ''}{BRAND.name}<Dot />
         </div>
@@ -80,7 +100,7 @@ const SeriesTag = ({title, episode, styleName}) => {
       opacity: s, background: BRAND.black, padding: '22px 36px 20px',
       textAlign: 'center', whiteSpace: 'nowrap',
     }}>
-      <div style={{fontWeight: 900, fontSize: 46, letterSpacing: '-0.02em', color: BRAND.white}}>{title}</div>
+      <div style={{fontFamily: st.koFont, fontWeight: st.tagWeight || 900, fontSize: 46, letterSpacing: '-0.02em', color: BRAND.white}}>{title}</div>
       <div style={{fontFamily: 'ArchivoBlack', fontSize: 22, letterSpacing: '0.12em', marginTop: 6, color: '#cfcfcf'}}>
         {episode ? `EP.${String(episode).padStart(2, '0')}  ` : ''}{BRAND.name}<Dot />
       </div>
@@ -145,16 +165,16 @@ const Scatter = ({texts, durationInFrames, st}) => {
   );
 };
 
-export const Reel = ({video, style = 'A', seriesTitle, episode, captions = [], pops = []}) => {
+export const Reel = ({video, style = 'A', font, seriesTitle, episode, captions = [], pops = []}) => {
   const {fps} = useVideoConfig();
-  const st = STYLES[style] || STYLES.A;
+  const st = withFont(STYLES[style] || STYLES.A, font);
   const f = (sec) => Math.round(sec * fps);
   return (
     <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif'}}>
       <style>{fontCss}</style>
       <OffthreadVideo src={staticFile(video)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       <AbsoluteFill style={{background: 'linear-gradient(to bottom,rgba(0,0,0,.25) 0,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 50%,rgba(0,0,0,.45) 85%)'}} />
-      <SeriesTag title={seriesTitle} episode={episode} styleName={style} />
+      <SeriesTag title={seriesTitle} episode={episode} styleName={style} st={st} />
       {pops.map((p, i) => {
         const d = f(p.end - p.start);
         return (

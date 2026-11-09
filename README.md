@@ -36,6 +36,7 @@ SOAMING LAB 릴스를 **같은 디자인으로 공장처럼** 찍어내는 편�
 ```
 
 - `style`: `"A"` 또는 `"B"`
+- `font` (선택): `"pretendard"` · `"myeongjo"`(나눔명조) · `"dohyeon"` — 스타일의 기본 글꼴 대신 이 글꼴을 써요
 - `episode`: 넣으면 이름표에 `EP.07`이 붙어요 (빼도 돼요)
 - `pops`: `text`는 큰 강조 단어, `scatter`는 화면 곳곳에 떠오르는 짧은 문구 (A·B 모두 사용 가능)
 
