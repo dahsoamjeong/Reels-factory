@@ -2,6 +2,7 @@ import React from 'react';
 import {registerRoot, Composition, Still} from 'remotion';
 import {Reel} from './Reel';
 import {Cover} from './Cover';
+import {Narration} from './Narration';
 import sample from '../episodes/sample.json';
 
 const Root = () => (
@@ -9,6 +10,10 @@ const Root = () => (
   <Composition
     id="Reel" component={Reel} fps={30} width={1080} height={1920}
     durationInFrames={300} defaultProps={sample}
+    calculateMetadata={({props}) => ({durationInFrames: Math.round(props.durationSec * 30)})}
+  />
+  <Composition id="Narration" component={Narration} fps={30} width={1080} height={1920}
+    durationInFrames={300} defaultProps={{audio: 'narration.wav', durationSec: 10, seriesTitle: 'Move to Find Yourself', scenes: [], subtitles: []}}
     calculateMetadata={({props}) => ({durationInFrames: Math.round(props.durationSec * 30)})}
   />
   <Still id="Cover" component={Cover} width={1080} height={1920}

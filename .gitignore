@@ -4,3 +4,5 @@ public/*.mp4
 public/*.mov
 *.wav
 public/cover-*.jpg
+public/intro/
+public/narration*.wav
