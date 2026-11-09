@@ -18,7 +18,7 @@ const Dot = () => (
 
 // layout: "cover"(화면 꽉 채우기, imagePosition으로 위치 조정)
 //         "inset"(사진을 아래쪽에 두고 위 빈 곳은 같은 사진을 흐리게 깔기 — 얼굴이 사진 위쪽에 있을 때)
-const Background = ({image, layout, imagePosition, fill, fillColor}) => {
+const Background = ({image, layout, imagePosition, fill, fillColor, fillColorBottom, cardTop}) => {
   if (layout === 'inset') {
     // 위 빈 곳 채우는 방식: "color"(사진 위쪽 벽 색으로) · "black"(검은 띠) · "blur"(같은 사진 흐리게)
     const fade = fill === 'black' ? 'transparent 0, #000 2%' : 'transparent 0, #000 14%';
@@ -34,13 +34,24 @@ const Background = ({image, layout, imagePosition, fill, fillColor}) => {
       </>
     );
   }
+  if (layout === 'card') {
+    // 가로 사진: 가운데에 그대로 두고 위아래는 사진 가장자리 색으로 이어서 채움
+    return (
+      <>
+        <AbsoluteFill style={{background: `linear-gradient(to bottom, ${fillColor} 0, ${fillColor} 50%, ${fillColorBottom || fillColor} 50%, ${fillColorBottom || fillColor} 100%)`}} />
+        <Img src={staticFile(image)} style={{position: 'absolute', left: 0, top: cardTop, width: '100%', height: 'auto',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%)'}} />
+      </>
+    );
+  }
   return <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: imagePosition}} />;
 };
 
-export const Cover = ({image, layout = 'cover', imagePosition = '50% 50%', fill = 'color', fillColor = '#6b5d48', seriesTitle, episode, episodeTitle, titleTop = 1180}) => (
+export const Cover = ({image, layout = 'cover', imagePosition = '50% 50%', fill = 'color', fillColor = '#6b5d48', fillColorBottom, cardTop = 560, seriesTitle, episode, episodeTitle, titleTop = 1180}) => (
   <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif', color: BRAND.white}}>
     <style>{fontCss}</style>
-    <Background image={image} layout={layout} imagePosition={imagePosition} fill={fill} fillColor={fillColor} />
+    <Background image={image} layout={layout} imagePosition={imagePosition} fill={fill} fillColor={fillColor} fillColorBottom={fillColorBottom} cardTop={cardTop} />
     <AbsoluteFill style={{background:
       'linear-gradient(to bottom,rgba(0,0,0,.55) 0,rgba(0,0,0,.25) 20%,rgba(0,0,0,0) 32%,rgba(0,0,0,0) 48%,rgba(0,0,0,.6) 64%,rgba(0,0,0,.7) 85%,rgba(0,0,0,.55) 100%)'}} />
 
