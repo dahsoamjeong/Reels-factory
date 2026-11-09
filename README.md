@@ -54,6 +54,18 @@ npx remotion render src/index.jsx Reel out/ep07.mp4 --props=episodes/ep07.json
 
 미리보기(브라우저에서 보면서 확인): `npm run studio`
 
+## 표지 만들기
+
+1. 표지로 쓸 장면을 `public/`에 이미지로 넣어요. (예: `public/cover-ep3.jpg`, 1080×1920)
+2. `covers/ep1.json`을 복사해서 바꿔요. 제목 줄바꿈은 `\n`으로 정해요.
+3. 렌더링해요.
+
+```bash
+npx remotion still src/index.jsx Cover out/cover-ep3.png --props=covers/ep3.json
+```
+
+이름표와 제목은 Instagram 프로필 화면에서 잘리지 않도록 가운데 안전 구역에 들어가요.
+
 ## 클라우드 세션 참고
 
 - 렌더링용 브라우저는 `remotion.config.js`에서 환경에 미리 깔린 Chromium을 쓰도록 지정돼 있어요. 다른 컴퓨터에서는 이 줄을 지워도 돼요.

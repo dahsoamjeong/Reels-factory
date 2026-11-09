@@ -3,3 +3,4 @@ out/
 public/*.mp4
 public/*.mov
 *.wav
+public/cover-*.jpg
