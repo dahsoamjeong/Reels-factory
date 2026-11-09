@@ -8,7 +8,7 @@ SOAMING LAB 릴스를 **같은 디자인으로 공장처럼** 찍어내는 편�
 | | A. 클린 랩 (기본) | B. 에디토리얼 |
 |---|---|---|
 | 글꼴 | Pretendard | Pretendard + Oswald(영어) |
-| 이름표 | 가운데 검은 박스 | 왼쪽 빨간 밑줄 + 회차 |
+| 이름표 | 가운데 검은 박스 안에 [로고 \| 시리즈 제목] | 왼쪽 정렬 [로고 \| 시리즈 제목] + 빨간 밑줄 + 회차 제목 |
 | 어울리는 영상 | 대부분의 인터뷰 | 감성적인 이야기, 가끔 변화 줄 때 |
 
 브랜드 색·이름은 `src/Reel.jsx` 맨 위 `BRAND`에서 한 번에 바꿔요. (빨강: 로고 점 색 `#CD2E1D`)
@@ -23,8 +23,9 @@ SOAMING LAB 릴스를 **같은 디자인으로 공장처럼** 찍어내는 편�
   "video": "ep07.mp4",
   "style": "A",
   "durationSec": 12,
-  "seriesTitle": "회사를 박차고 나와 웰니스 강사요?",
-  "episode": 7,
+  "seriesTitle": "Move to Find Yourself",
+  "episode": 1,
+  "episodeTitle": "기세와 에너지",
   "captions": [
     {"start": 0.3, "end": 3.6, "small": "작은 줄", "big": "크게 보여줄 핵심 문장", "en": "English translation"}
   ],
@@ -40,7 +41,7 @@ SOAMING LAB 릴스를 **같은 디자인으로 공장처럼** 찍어내는 편�
   작은 줄과 영어 번역은 읽기 쉽게 항상 Pretendard로 남아요.
   예: `{"start": 1.6, "end": 3.4, "text": "완벽", "font": "myeongjo"}`
 - `font` (영상 전체, 선택): `"pretendard"` · `"myeongjo"` · `"dohyeon"` — 스타일 기본 글꼴을 통째로 바꿀 때만 써요
-- `episode`: 넣으면 이름표에 `EP.07`이 붙어요 (빼도 돼요)
+- `episode`, `episodeTitle`: 넣으면 이름표 아래에 `Ep1. 기세와 에너지`처럼 회차 제목이 붙어요 (빼도 돼요)
 - 자막 줄바꿈 위치를 직접 정하려면 `big` 안에 `\n`을 넣어요 (예: `"안 죽었으면\n하나님 뜻이 있다"`)
 - `pops`: `text`는 큰 강조 단어, `scatter`는 화면 곳곳에 떠오르는 짧은 문구 (A·B 모두 사용 가능)
 

@@ -1,8 +1,8 @@
 {
   "video": "reel-gise.mp4",
-  "style": "A",
+  "style": "B",
   "durationSec": 24.85,
-  "seriesTitle": "회사를 박차고 나와 웰니스 강사요?",
+  "seriesTitle": "Move to Find Yourself",
   "captions": [
     {
       "start": 0.3,
@@ -76,5 +76,7 @@
       "text": "기세",
       "font": "myeongjo"
     }
-  ]
+  ],
+  "episode": 1,
+  "episodeTitle": "기세와 에너지"
 }

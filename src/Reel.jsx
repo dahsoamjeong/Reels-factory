@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame,
+  AbsoluteFill, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame,
   useVideoConfig, interpolate, spring,
 } from 'remotion';
 import '@fontsource/do-hyeon/400.css';
@@ -15,6 +15,8 @@ export const BRAND = {
   black: '#0A0A0A',
   white: '#FFFFFF',
   name: 'SOAMING LAB',
+  logoWhite: 'brand/logo-white.png',
+  logoBlack: 'brand/logo-black.png',
 };
 
 // ── 스타일 A(클린 랩) / B(에디토리얼) ─────────────────────────
@@ -86,20 +88,40 @@ const Dot = () => (
   }} />
 );
 
+// SOAMING LAB. 로고 (흰색 버전)
+const Logo = ({height}) => (
+  <Img src={staticFile(BRAND.logoWhite)} style={{height, width: 'auto', display: 'block'}} />
+);
+
+// 이름표 한 줄: [로고] | 시리즈 제목
+const TagLine = ({title, fontSize, logoHeight, font}) => (
+  <div style={{display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', color: BRAND.white}}>
+    <Logo height={logoHeight} />
+    <span style={{width: 2, height: fontSize * 0.8, background: 'rgba(255,255,255,.5)', margin: `0 ${fontSize * 0.45}px`}} />
+    <span style={{fontFamily: font, fontWeight: 600, fontSize, letterSpacing: '-0.01em'}}>{title}</span>
+  </div>
+);
+
+// 회차 제목: "Ep1. 기세와 에너지"
+const epLabel = (episode, episodeTitle) =>
+  episode ? `Ep${episode}.${episodeTitle ? ' ' + episodeTitle : ''}` : (episodeTitle || null);
+
 // 화면 위쪽 시리즈 이름표
-const SeriesTag = ({title, episode, styleName, st}) => {
+const SeriesTag = ({title, episode, episodeTitle, styleName, st}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const s = spring({frame, fps, config: {damping: 200}, durationInFrames: 12});
   const slide = interpolate(s, [0, 1], [-20, 0]);
+  const ep = epLabel(episode, episodeTitle);
+  const epStyle = {fontFamily: st.koFont, fontWeight: 700, fontSize: 36, letterSpacing: '-0.02em', color: BRAND.white};
   if (styleName === 'B') {
     return (
       <div style={{position: 'absolute', top: 150, left: 72, opacity: s, transform: `translateY(${slide}px)`,
-        color: BRAND.white, textShadow: '0 2px 12px rgba(0,0,0,.5)'}}>
-        <span style={{fontFamily: st.koFont, fontWeight: st.tagWeight || 800, fontSize: 48, letterSpacing: '-0.02em', borderBottom: `6px solid ${BRAND.red}`, paddingBottom: 6}}>{title}</span>
-        <div style={{fontFamily: 'Oswald', fontSize: 28, letterSpacing: '0.08em', marginTop: 16, opacity: 0.9}}>
-          {episode ? `EP.${String(episode).padStart(2, '0')} — ` : ''}{BRAND.name}<Dot />
+        filter: 'drop-shadow(0 2px 8px rgba(0,0,0,.5))'}}>
+        <div style={{paddingBottom: 14, borderBottom: `6px solid ${BRAND.red}`, display: 'inline-block'}}>
+          <TagLine title={title} fontSize={40} logoHeight={30} font={st.koFont} />
         </div>
+        {ep && <div style={{...epStyle, marginTop: 18}}>{ep}</div>}
       </div>
     );
   }
@@ -107,13 +129,11 @@ const SeriesTag = ({title, episode, styleName, st}) => {
     <div style={{
       position: 'absolute', top: 150, left: '50%',
       transform: `translateX(-50%) translateY(${slide}px)`,
-      opacity: s, background: BRAND.black, padding: '22px 36px 20px',
-      textAlign: 'center', whiteSpace: 'nowrap',
+      opacity: s, background: BRAND.black, padding: '26px 40px',
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
     }}>
-      <div style={{fontFamily: st.koFont, fontWeight: st.tagWeight || 900, fontSize: 46, letterSpacing: '-0.02em', color: BRAND.white}}>{title}</div>
-      <div style={{fontFamily: 'ArchivoBlack', fontSize: 22, letterSpacing: '0.12em', marginTop: 6, color: '#cfcfcf'}}>
-        {episode ? `EP.${String(episode).padStart(2, '0')}  ` : ''}{BRAND.name}<Dot />
-      </div>
+      <TagLine title={title} fontSize={38} logoHeight={29} font={st.koFont} />
+      {ep && <div style={{...epStyle, fontSize: 32, marginTop: 12, opacity: 0.85}}>{ep}</div>}
     </div>
   );
 };
@@ -177,7 +197,7 @@ const Scatter = ({texts, font, durationInFrames, st}) => {
   );
 };
 
-export const Reel = ({video, style = 'A', font, seriesTitle, episode, captions = [], pops = []}) => {
+export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTitle, captions = [], pops = []}) => {
   const {fps} = useVideoConfig();
   const st = withFont(STYLES[style] || STYLES.A, font);
   const f = (sec) => Math.round(sec * fps);
@@ -185,8 +205,8 @@ export const Reel = ({video, style = 'A', font, seriesTitle, episode, captions =
     <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif'}}>
       <style>{fontCss}</style>
       <OffthreadVideo src={staticFile(video)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-      <AbsoluteFill style={{background: 'linear-gradient(to bottom,rgba(0,0,0,.25) 0,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 45%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.55) 80%,rgba(0,0,0,.3) 100%)'}} />
-      <SeriesTag title={seriesTitle} episode={episode} styleName={style} st={st} />
+      <AbsoluteFill style={{background: 'linear-gradient(to bottom,rgba(0,0,0,.5) 0,rgba(0,0,0,.2) 12%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 45%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.55) 80%,rgba(0,0,0,.3) 100%)'}} />
+      <SeriesTag title={seriesTitle} episode={episode} episodeTitle={episodeTitle} styleName={style} st={st} />
       {pops.map((p, i) => {
         const d = f(p.end - p.start);
         return (
