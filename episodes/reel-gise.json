@@ -1,7 +1,7 @@
 {
   "video": "reel-gise.mp4",
   "style": "A",
-  "durationSec": 25,
+  "durationSec": 24.85,
   "seriesTitle": "회사를 박차고 나와 웰니스 강사요?",
   "captions": [
     {
@@ -48,7 +48,7 @@
     },
     {
       "start": 21.47,
-      "end": 24.9,
+      "end": 24.8,
       "small": "완벽보다",
       "big": "기세가 먼저예요",
       "en": "Momentum before perfection."
@@ -72,7 +72,7 @@
     },
     {
       "start": 21.57,
-      "end": 24.9,
+      "end": 24.75,
       "text": "기세",
       "font": "myeongjo"
     }
