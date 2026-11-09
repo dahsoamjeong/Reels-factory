@@ -1,0 +1,80 @@
+{
+  "video": "reel-gise.mp4",
+  "style": "A",
+  "durationSec": 25,
+  "seriesTitle": "회사를 박차고 나와 웰니스 강사요?",
+  "captions": [
+    {
+      "start": 0.3,
+      "end": 3.73,
+      "small": "제 기세랑 에너지,",
+      "big": "어디서 나오냐고요?",
+      "en": "Where does my energy come from?"
+    },
+    {
+      "start": 3.83,
+      "end": 7.26,
+      "small": "기회를 만들고 협업할 때",
+      "big": "가장 도움이 되는 건 이거예요",
+      "en": "Here's what helps me most when I create opportunities."
+    },
+    {
+      "start": 7.36,
+      "end": 10.79,
+      "small": "미국 유학 시절,",
+      "big": "영어 틀릴까 걱정 안 했어요",
+      "en": "Studying in the U.S., I never worried about getting my English wrong."
+    },
+    {
+      "start": 10.89,
+      "end": 14.31,
+      "small": "외국인이 한국말 하면 귀엽잖아요",
+      "big": "저도 귀엽다고 생각했죠",
+      "en": "Foreigners speaking Korean sound cute, so I figured I was cute, too."
+    },
+    {
+      "start": 14.41,
+      "end": 17.84,
+      "small": "그래서 지금도",
+      "big": "완벽해질 때까지 기다리지 않아요",
+      "en": "So even now, I don't wait until it's perfect."
+    },
+    {
+      "start": 17.94,
+      "end": 21.37,
+      "small": "제안도, 기회도, 만드는 것도",
+      "big": "일단 기세로 먼저 해봐요",
+      "en": "Pitching, finding chances, building: I just go first, with momentum."
+    },
+    {
+      "start": 21.47,
+      "end": 24.9,
+      "small": "완벽보다",
+      "big": "기세가 먼저예요",
+      "en": "Momentum before perfection."
+    }
+  ],
+  "pops": [
+    {
+      "start": 0.3,
+      "end": 2.4,
+      "text": "기세",
+      "font": "myeongjo"
+    },
+    {
+      "start": 18.040000000000003,
+      "end": 21.37,
+      "scatter": [
+        "먼저 다가가고",
+        "일단 제안하고",
+        "일단 만들어보고"
+      ]
+    },
+    {
+      "start": 21.57,
+      "end": 24.9,
+      "text": "기세",
+      "font": "myeongjo"
+    }
+  ]
+}

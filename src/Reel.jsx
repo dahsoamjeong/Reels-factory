@@ -126,7 +126,7 @@ const Caption = ({small, big, en, font, durationInFrames, st}) => {
   return (
     <div style={{
       position: 'absolute', left: 72, top: 1130, width: 900, color: BRAND.white,
-      textShadow: '0 2px 12px rgba(0,0,0,.55)', wordBreak: 'keep-all',
+      textShadow: '0 2px 4px rgba(0,0,0,.5), 0 2px 16px rgba(0,0,0,.6)', wordBreak: 'keep-all', whiteSpace: 'pre-line',
       opacity: enter * exit, transform: `translateY(${interpolate(enter, [0, 1], [18, 0])}px)`,
     }}>
       {small && <div style={{fontFamily: st.koFont, ...st.small, opacity: 0.95}}>{small}</div>}
@@ -185,7 +185,7 @@ export const Reel = ({video, style = 'A', font, seriesTitle, episode, captions =
     <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif'}}>
       <style>{fontCss}</style>
       <OffthreadVideo src={staticFile(video)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-      <AbsoluteFill style={{background: 'linear-gradient(to bottom,rgba(0,0,0,.25) 0,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 50%,rgba(0,0,0,.45) 85%)'}} />
+      <AbsoluteFill style={{background: 'linear-gradient(to bottom,rgba(0,0,0,.25) 0,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 45%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.55) 80%,rgba(0,0,0,.3) 100%)'}} />
       <SeriesTag title={seriesTitle} episode={episode} styleName={style} st={st} />
       {pops.map((p, i) => {
         const d = f(p.end - p.start);
