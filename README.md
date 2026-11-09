@@ -55,6 +55,18 @@ npx remotion render src/index.jsx Reel out/ep07.mp4 --props=episodes/ep07.json
 
 미리보기(브라우저에서 보면서 확인): `npm run studio`
 
+## 편집 원칙
+
+- 한 릴스에 장면 전환은 이야기가 바뀌는 곳에서 1번만. 컷 없이 이어지는 구간만 사용
+- 릴스끼리 같은 장면을 쓰지 않기
+- 자막은 Pretendard, 명조는 큰 강조 단어에만
+- 영상을 느리게 늘릴 때는 프레임 보간(minterpolate)을 쓰지 않기 — 얼굴·손이 깨짐.
+  원래 프레임을 반복하는 방식으로 늘려요:
+
+```bash
+ffmpeg -ss 시작 -t 길이 -i 원본.mp4 -vf "scale=1080:1920,setsar=1,setpts=1.3*PTS,fps=30" -an -c:v libx264 -crf 17 -pix_fmt yuv420p public/배경.mp4
+```
+
 ## 표지 만들기
 
 1. 표지로 쓸 장면을 `public/`에 이미지로 넣어요. (예: `public/cover-ep3.jpg`, 1080×1920)
