@@ -139,7 +139,7 @@ const SeriesTag = ({title, episode, episodeTitle, styleName, st}) => {
 };
 
 // 기본 자막: 작은 줄 + 큰 줄 + 영어 번역
-const Caption = ({small, big, en, font, durationInFrames, st}) => {
+const Caption = ({small, big, en, font, dot = true, durationInFrames, st}) => {
   const frame = useCurrentFrame();
   const enter = interpolate(frame, [0, 6], [0, 1], clamp);
   const exit = interpolate(frame, [durationInFrames - 4, durationInFrames], [1, 0], clamp);
@@ -150,7 +150,7 @@ const Caption = ({small, big, en, font, durationInFrames, st}) => {
       opacity: enter * exit, transform: `translateY(${interpolate(enter, [0, 1], [18, 0])}px)`,
     }}>
       {small && <div style={{fontFamily: st.koFont, ...st.small, opacity: 0.95}}>{small}</div>}
-      <div style={{fontFamily: st.koFont, ...st.big, ...accent(font)}}><WithDot text={big} /></div>
+      <div style={{fontFamily: st.koFont, ...st.big, ...accent(font)}}>{dot ? <WithDot text={big} /> : big}</div>
       {en && <div style={{fontFamily: st.enFont, ...st.en, opacity: 0.85}}>{en}</div>}
     </div>
   );

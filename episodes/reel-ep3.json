@@ -1,0 +1,95 @@
+{
+  "video": "reel-ep3.mp4",
+  "style": "B",
+  "durationSec": 30.4,
+  "seriesTitle": "Move to Find Yourself",
+  "episode": 3,
+  "episodeTitle": "추진력",
+  "captions": [
+    {
+      "start": 0.3,
+      "end": 3.3,
+      "small": "저를 표현하는 키워드,",
+      "big": "에너지 다음은 추진력",
+      "en": "After \"energy,\" the word people use most for me is \"drive.\""
+    },
+    {
+      "start": 3.4,
+      "end": 5.9,
+      "small": "이틀 만에",
+      "big": "친구 12명 모아 커뮤니티 운영",
+      "en": "In two days, I gathered 12 friends and started a community."
+    },
+    {
+      "start": 6.0,
+      "end": 8.5,
+      "small": "이틀 만에",
+      "big": "포스터 30장으로 브랜딩 시작",
+      "en": "In two days, I made 30 posters and started my branding."
+    },
+    {
+      "start": 8.6,
+      "end": 11.4,
+      "small": "일주일 만에 하버드 석사,",
+      "big": "하루 만에\n카이스트 MBA 지원",
+      "en": "A Harvard master's application in a week. KAIST MBA in a day."
+    },
+    {
+      "start": 11.5,
+      "end": 13.8,
+      "small": "사흘 만에",
+      "big": "카카오톡 이모티콘 제작",
+      "en": "KakaoTalk emoticons in three days."
+    },
+    {
+      "start": 13.9,
+      "end": 17.0,
+      "small": "\"생각을 사고 싶다\"는 말에",
+      "big": "한 달 1만 원에\n내 생각을 팔았어요",
+      "en": "People wanted to buy my thoughts, so I sold them for ₩10,000 a month."
+    },
+    {
+      "start": 17.1,
+      "end": 19.9,
+      "small": "계속 행동할 수 있었던 건",
+      "big": "성장하고 싶은 욕심",
+      "en": "What keeps me moving is the hunger to grow,",
+      "dot": false
+    },
+    {
+      "start": 20.0,
+      "end": 23.4,
+      "small": "실수하더라도 도전해야",
+      "big": "다음 도전이 가능하니까요",
+      "en": "and knowing that trying, even failing, is what makes the next challenge possible."
+    },
+    {
+      "start": 23.5,
+      "end": 26.9,
+      "small": "1년을 설득해 간 미국에서",
+      "big": "GPA 4.5 만점, 전교 2등",
+      "en": "In the U.S., after a year of convincing my parents, I got a perfect 4.5 GPA and ranked 2nd in my school."
+    },
+    {
+      "start": 27.0,
+      "end": 30.3,
+      "small": "영어 한마디 못하던 나도",
+      "big": "기세 하나로 할 수 있구나",
+      "en": "Even I, who couldn't speak English, could do it with sheer momentum."
+    }
+  ],
+  "pops": [
+    {
+      "start": 0.3,
+      "end": 2.6,
+      "text": "추진력",
+      "font": "myeongjo"
+    },
+    {
+      "start": 27.1,
+      "end": 30.3,
+      "text": "추진력",
+      "font": "myeongjo"
+    }
+  ]
+}
