@@ -16,10 +16,26 @@ const Dot = () => (
     background: BRAND.red, marginLeft: '0.06em'}} />
 );
 
-export const Cover = ({image, seriesTitle, episode, episodeTitle, titleTop = 1180}) => (
+// layout: "cover"(화면 꽉 채우기, imagePosition으로 위치 조정)
+//         "inset"(사진을 아래쪽에 두고 위 빈 곳은 같은 사진을 흐리게 깔기 — 얼굴이 사진 위쪽에 있을 때)
+const Background = ({image, layout, imagePosition}) => {
+  if (layout === 'inset') {
+    return (
+      <>
+        <Img src={staticFile(image)} style={{position: 'absolute', inset: 0, width: '100%', height: '100%',
+          objectFit: 'cover', filter: 'blur(40px) brightness(.55)', transform: 'scale(1.15)'}} />
+        <Img src={staticFile(image)} style={{position: 'absolute', left: 0, bottom: 0, width: '100%', height: 'auto',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 12%)', maskImage: 'linear-gradient(to bottom, transparent 0, #000 12%)'}} />
+      </>
+    );
+  }
+  return <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: imagePosition}} />;
+};
+
+export const Cover = ({image, layout = 'cover', imagePosition = '50% 50%', seriesTitle, episode, episodeTitle, titleTop = 1180}) => (
   <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif', color: BRAND.white}}>
     <style>{fontCss}</style>
-    <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+    <Background image={image} layout={layout} imagePosition={imagePosition} />
     <AbsoluteFill style={{background:
       'linear-gradient(to bottom,rgba(0,0,0,.55) 0,rgba(0,0,0,.25) 20%,rgba(0,0,0,0) 32%,rgba(0,0,0,0) 48%,rgba(0,0,0,.6) 64%,rgba(0,0,0,.7) 85%,rgba(0,0,0,.55) 100%)'}} />
 
