@@ -1,0 +1,88 @@
+{
+  "video": "reel-ep6.mp4",
+  "style": "B",
+  "durationSec": 37.85,
+  "seriesTitle": "Move to Find Yourself",
+  "episode": 6,
+  "episodeTitle": "성장",
+  "captions": [
+    {
+      "start": 1.7,
+      "end": 5.51,
+      "small": "저를 움직이는 원동력이 뭐냐고요?",
+      "big": "저는 성장이에요",
+      "en": "What drives me? Growth."
+    },
+    {
+      "start": 5.61,
+      "end": 9.43,
+      "small": "회사를 떠날 때의 기준도",
+      "big": "여기서\n성장하고 있는가였어요",
+      "en": "Even leaving a job came down to: am I growing here?"
+    },
+    {
+      "start": 9.53,
+      "end": 13.11,
+      "small": "성장하고 싶어서",
+      "big": "모든 기회에 YES맨이 됐어요",
+      "en": "To grow, I said yes to every opportunity."
+    },
+    {
+      "start": 13.21,
+      "end": 17.26,
+      "small": "유튜브를 하다 보니",
+      "big": "카카오톡 선물하기\n라이즈 아이돌 영상을 편집했고",
+      "en": "YouTube led me to edit idol group RIIZE videos for KakaoTalk Gifts,",
+      "dot": false
+    },
+    {
+      "start": 17.36,
+      "end": 20.94,
+      "small": "NFT를 발행하다 보니",
+      "big": "서울시립대 NFT 자문까지",
+      "en": "minting NFTs led to advising the University of Seoul,"
+    },
+    {
+      "start": 21.04,
+      "end": 25.09,
+      "small": "국내 유망 기술 창업을 지원하는",
+      "big": "TIPS 심사위원도 해봤어요",
+      "en": "and I even judged for TIPS, Korea's startup program."
+    },
+    {
+      "start": 25.19,
+      "end": 28.77,
+      "small": "실패도, 성공도 있었지만",
+      "big": "제 기준은 늘 하나였어요",
+      "en": "There were failures and wins, but my rule never changed:"
+    },
+    {
+      "start": 28.87,
+      "end": 32.91,
+      "small": "성장할 곳, 성장할 사람들이 있는 곳으로",
+      "big": "나아가는 것",
+      "en": "go where I can grow, among people who grow."
+    },
+    {
+      "start": 33.01,
+      "end": 37.85,
+      "small": "저를 움직이는 건",
+      "big": "성장할 기회, 성장할 사람,\n그리고 성장",
+      "en": "What moves me: chances to grow, people who grow, and growth."
+    }
+  ],
+  "pops": [
+    {
+      "start": 0.2,
+      "end": 1.8,
+      "text": "성장",
+      "font": "myeongjo"
+    },
+    {
+      "start": 28.97,
+      "end": 32.91,
+      "text": "성장",
+      "font": "myeongjo"
+    }
+  ]
+}
