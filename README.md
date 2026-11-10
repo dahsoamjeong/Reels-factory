@@ -78,6 +78,7 @@ ffmpeg -ss 시작 -t 길이 -i 원본.mp4 -vf "scale=1080:1920,setsar=1,setpts=1
 
 1. 사진을 `public/cover-epN.jpg`로 넣어요 (원본 크기 그대로)
 2. `covers/ep1.json`을 복사해서 바꿔요: `srcW`/`srcH`(사진 크기), `face`(얼굴 중심 x, y, 사진 픽셀 기준), `fillTop`/`fillBottom`(가장자리 색)
+   - 전신이 다 보이게 작게 넣고 싶으면 `scale`(예: 0.9)과 가운데 기준 `centerX`(사진 픽셀)를 넣어요
 3. 렌더링: `npx remotion still src/index.jsx Cover out/cover-epN.png --props=covers/epN.json`
 
 ## 클라우드 세션 참고

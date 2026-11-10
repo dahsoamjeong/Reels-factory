@@ -11,5 +11,7 @@
  "fillBottom": "#a8947e",
  "seriesTitle": "Move to Find Yourself",
  "episode": 4,
- "episodeTitle": "호기심"
+ "episodeTitle": "호기심",
+ "scale": 0.9,
+ "centerX": 880
 }

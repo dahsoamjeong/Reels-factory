@@ -31,21 +31,27 @@ const titleFontSize = (t) => {
 // 사진은 확대하지 않고 화면을 채우는 데 필요한 만큼만 맞춤 (원래 구도 유지)
 // 사진이 화면보다 넓으면 얼굴이 가운데 오게 좌우만 이동
 // 얼굴이 이름표 밑으로 들어갈 만큼 위에 있으면, 그만큼만 아래로 내리고 위는 가장자리 색으로 채움
-const placePhoto = ({srcW, srcH, face}) => {
-  const s = Math.max(W / srcW, H / srcH);
+// 사진은 확대하지 않고 화면을 채우는 데 필요한 만큼만 맞춤 (원래 구도 유지)
+// 사진이 화면보다 넓으면 얼굴(또는 centerX)이 가운데 오게 좌우만 이동
+// 얼굴이 이름표 밑으로 들어갈 만큼 위에 있으면, 그만큼만 아래로 내리고 위는 가장자리 색으로 채움
+// scale(0~1)을 주면 그만큼 작게 넣어서 전신이 다 보이게 함 (빈 곳은 가장자리 색)
+const placePhoto = ({srcW, srcH, face, scale, centerX}) => {
+  const cover = Math.max(W / srcW, H / srcH);
+  const s = cover * (scale || 1);
   const w = srcW * s, h = srcH * s;
-  const x = face ? Math.min(0, Math.max(W - w, W / 2 - face.x * s)) : (W - w) / 2;
+  const cx = centerX ?? (face ? face.x : srcW / 2);
+  const x = w > W ? Math.min(0, Math.max(W - w, W / 2 - cx * s)) : (W - w) / 2;
   let y = (H - h) / 2;
   if (face && face.y * s + y < COVER_LAYOUT.minFaceY) y = COVER_LAYOUT.minFaceY - face.y * s;
   return {s, w, h, x, y};
 };
 
 const Background = (p) => {
-  const {image, srcW, srcH, face, fillTop = '#000', fillBottom = '#000'} = p;
+  const {image, srcW, srcH, face, scale, centerX, fillTop = '#000', fillBottom = '#000'} = p;
   if (!srcW || !srcH) {
     return <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: p.imagePosition || '50% 50%'}} />;
   }
-  const {w, h, x, y} = placePhoto({srcW, srcH, face});
+  const {w, h, x, y} = placePhoto({srcW, srcH, face, scale, centerX});
   const topGap = Math.max(0, y), bottomGap = Math.max(0, H - (y + h));
   const fadeTop = topGap > 0 ? 'transparent 0, #000 10%' : '#000 0';
   const fadeBottom = bottomGap > 0 ? '#000 90%, transparent 100%' : '#000 100%';
