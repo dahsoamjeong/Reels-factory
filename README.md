@@ -69,19 +69,15 @@ ffmpeg -ss 시작 -t 길이 -i 원본.mp4 -vf "scale=1080:1920,setsar=1,setpts=1
 
 ## 표지 만들기
 
-1. 표지로 쓸 장면을 `public/`에 이미지로 넣어요. (예: `public/cover-ep3.jpg`, 1080×1920)
-2. `covers/ep1.json`을 복사해서 바꿔요. 제목 줄바꿈은 `\n`으로 정해요.
-   - `layout`: `"cover"`(화면 꽉 채우기, 기본) · `"inset"`(얼굴이 사진 위쪽에 있어 이름표에 가릴 때 — 사진을 아래로 내리고 위 빈 곳을 채움)
-   - `fill`: `"inset"`일 때 위 빈 곳 채우는 방식 — `"color"`(기본, `fillColor` 색으로 자연스럽게) · `"black"` · `"blur"`
-   - `fillColor`: 사진 맨 위 배경색과 맞춰요 (예: 벽 색 `"#83744b"`)
-   - `imagePosition`: `"cover"`일 때 사진 위치 (예: 인물이 오른쪽이면 `"85% 50%"`)
-3. 렌더링해요.
+모든 표지가 같은 자리에 오도록 규칙이 정해져 있어요 (`src/Cover.jsx`의 `COVER_LAYOUT`).
+- 이름표: 항상 같은 위치
+- 얼굴: 얼굴 중심이 항상 같은 높이, 크기도 비슷하게 (흐려지지 않게 최대 2배까지만 확대)
+- "Ep N."과 제목: 항상 같은 높이, 한 줄 (긴 제목은 글자 크기만 줄어요)
+- 사진이 모자라는 위·아래는 사진 가장자리 색으로 채워요 (흐림 없음)
 
-```bash
-npx remotion still src/index.jsx Cover out/cover-ep3.png --props=covers/ep3.json
-```
-
-이름표와 제목은 Instagram 프로필 화면에서 잘리지 않도록 가운데 안전 구역에 들어가요.
+1. 사진을 `public/cover-epN.jpg`로 넣어요 (원본 크기 그대로)
+2. `covers/ep1.json`을 복사해서 바꿔요: `srcW`/`srcH`(사진 크기), `face`(얼굴 중심 x, y와 크기, 사진 픽셀 기준), `fillTop`/`fillBottom`(가장자리 색)
+3. 렌더링: `npx remotion still src/index.jsx Cover out/cover-epN.png --props=covers/epN.json`
 
 ## 클라우드 세션 참고
 

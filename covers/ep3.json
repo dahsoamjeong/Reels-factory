@@ -1,1 +1,15 @@
-{"image": "cover-ep3.jpg", "imagePosition": "45% 50%", "seriesTitle": "Move to Find Yourself", "episode": 3, "episodeTitle": "추진력", "titleTop": 1270}
+{
+ "image": "cover-ep3.jpg",
+ "srcW": 1333,
+ "srcH": 2000,
+ "face": {
+  "x": 545.5,
+  "y": 684.5,
+  "size": 275
+ },
+ "fillTop": "#35332f",
+ "fillBottom": "#615549",
+ "seriesTitle": "Move to Find Yourself",
+ "episode": 3,
+ "episodeTitle": "추진력"
+}

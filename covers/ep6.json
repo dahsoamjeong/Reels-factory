@@ -1,1 +1,15 @@
-{"image": "cover-ep6.jpg", "imagePosition": "80% 50%", "seriesTitle": "Move to Find Yourself", "episode": 6, "episodeTitle": "성장", "titleTop": 1420}
+{
+ "image": "cover-ep6.jpg",
+ "srcW": 1328,
+ "srcH": 2000,
+ "face": {
+  "x": 569.5,
+  "y": 1113.5,
+  "size": 107
+ },
+ "fillTop": "#221f1b",
+ "fillBottom": "#3b3938",
+ "seriesTitle": "Move to Find Yourself",
+ "episode": 6,
+ "episodeTitle": "성장"
+}

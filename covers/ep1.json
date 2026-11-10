@@ -1,1 +1,15 @@
-{"image": "cover-ep1.jpg", "layout": "inset", "seriesTitle": "Move to Find Yourself", "episode": 1, "episodeTitle": "기세와\n에너지", "fill": "color", "fillColor": "#83744b"}
+{
+ "image": "cover-ep1.jpg",
+ "srcW": 1333,
+ "srcH": 2000,
+ "face": {
+  "x": 649.0,
+  "y": 309.0,
+  "size": 342
+ },
+ "fillTop": "#86744a",
+ "fillBottom": "#493e2b",
+ "seriesTitle": "Move to Find Yourself",
+ "episode": 1,
+ "episodeTitle": "기세와 에너지"
+}

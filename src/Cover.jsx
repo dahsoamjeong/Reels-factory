@@ -3,77 +3,92 @@ import {AbsoluteFill, Img, staticFile} from 'remotion';
 import {BRAND} from './Reel';
 
 // 릴스 표지 (1080×1920)
-// Instagram 프로필 화면에서는 가운데 부분만 보이므로
-// 이름표와 제목은 가운데 안전 구역(위아래 약 290px 안쪽)에 둠
+// 통일 규칙:
+//  - 이름표는 모든 표지에서 같은 위치
+//  - 얼굴(face)을 주면, 얼굴 중심이 항상 같은 높이(faceY)에 오고 크기도 비슷하게(faceSize) 맞춤
+//    (작은 사진은 흐려지지 않게 maxScale배까지만 확대)
+//  - 사진이 모자라는 위/아래는 사진 가장자리 색(fillTop/fillBottom)으로 자연스럽게 채움
+//  - "Ep N." 과 제목은 모든 표지에서 같은 높이, 한 줄 (긴 제목은 글자 크기만 줄임)
 const fontCss = `
 @font-face{font-family:Pretendard;font-weight:500;src:url(${staticFile('fonts/Pretendard-Medium.woff2')})}
 @font-face{font-family:Pretendard;font-weight:700;src:url(${staticFile('fonts/Pretendard-Bold.woff2')})}
 @font-face{font-family:Pretendard;font-weight:800 900;src:url(${staticFile('fonts/Pretendard-Black.woff2')})}
 `;
 
+const W = 1080, H = 1920;
+export const COVER_LAYOUT = {tagTop: 330, faceY: 740, faceSize: 240, maxScale: 2.0, epTop: 1250, titleMax: 168, titleWidth: 900};
+
 const Dot = () => (
   <span style={{display: 'inline-block', width: '0.2em', height: '0.2em', borderRadius: '50%',
     background: BRAND.red, marginLeft: '0.06em'}} />
 );
 
-// layout: "cover"(화면 꽉 채우기, imagePosition으로 위치 조정)
-//         "inset"(사진을 아래쪽에 두고 위 빈 곳은 같은 사진을 흐리게 깔기 — 얼굴이 사진 위쪽에 있을 때)
-const Background = ({image, layout, imagePosition, fill, fillColor, fillColorBottom, cardTop}) => {
-  if (layout === 'inset') {
-    // 위 빈 곳 채우는 방식: "color"(사진 위쪽 벽 색으로) · "black"(검은 띠) · "blur"(같은 사진 흐리게)
-    const fade = fill === 'black' ? 'transparent 0, #000 2%' : 'transparent 0, #000 14%';
-    const back = fill === 'blur'
-      ? <Img src={staticFile(image)} style={{position: 'absolute', inset: 0, width: '100%', height: '100%',
-          objectFit: 'cover', filter: 'blur(40px) brightness(.55)', transform: 'scale(1.15)'}} />
-      : <AbsoluteFill style={{background: fill === 'black' ? BRAND.black : fillColor}} />;
-    return (
-      <>
-        {back}
-        <Img src={staticFile(image)} style={{position: 'absolute', left: 0, bottom: 0, width: '100%', height: 'auto',
-          WebkitMaskImage: `linear-gradient(to bottom, ${fade})`, maskImage: `linear-gradient(to bottom, ${fade})`}} />
-      </>
-    );
-  }
-  if (layout === 'card') {
-    // 가로 사진: 가운데에 그대로 두고 위아래는 사진 가장자리 색으로 이어서 채움
-    return (
-      <>
-        <AbsoluteFill style={{background: `linear-gradient(to bottom, ${fillColor} 0, ${fillColor} 50%, ${fillColorBottom || fillColor} 50%, ${fillColorBottom || fillColor} 100%)`}} />
-        <Img src={staticFile(image)} style={{position: 'absolute', left: 0, top: cardTop, width: '100%', height: 'auto',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%)',
-          maskImage: 'linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%)'}} />
-      </>
-    );
-  }
-  return <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: imagePosition}} />;
+// 제목 글자 폭 대략 계산(한글 0.92em, 공백 0.3em, 영문·숫자 0.6em) → 한 줄에 들어가는 글자 크기
+const titleFontSize = (t) => {
+  const em = [...t].reduce((a, ch) => a + (ch === ' ' ? 0.3 : /[가-힣]/.test(ch) ? 0.92 : 0.6), 0) + 0.25;
+  return Math.min(COVER_LAYOUT.titleMax, Math.floor(COVER_LAYOUT.titleWidth / em));
 };
 
-export const Cover = ({image, layout = 'cover', imagePosition = '50% 50%', fill = 'color', fillColor = '#6b5d48', fillColorBottom, cardTop = 560, seriesTitle, episode, episodeTitle, titleTop = 1180}) => (
-  <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif', color: BRAND.white}}>
-    <style>{fontCss}</style>
-    <Background image={image} layout={layout} imagePosition={imagePosition} fill={fill} fillColor={fillColor} fillColorBottom={fillColorBottom} cardTop={cardTop} />
-    <AbsoluteFill style={{background:
-      'linear-gradient(to bottom,rgba(0,0,0,.55) 0,rgba(0,0,0,.25) 20%,rgba(0,0,0,0) 32%,rgba(0,0,0,0) 48%,rgba(0,0,0,.6) 64%,rgba(0,0,0,.7) 85%,rgba(0,0,0,.55) 100%)'}} />
+const placePhoto = ({srcW, srcH, face}) => {
+  const cover = Math.max(W / srcW, H / srcH);
+  let s = cover;
+  if (face) s = Math.max(cover, Math.min(COVER_LAYOUT.faceSize / face.size, Math.max(cover, COVER_LAYOUT.maxScale)));
+  const w = srcW * s, h = srcH * s;
+  const cx = face ? face.x * s : w / 2, cy = face ? face.y * s : h / 2;
+  const x = Math.min(0, Math.max(W - w, W / 2 - cx));
+  const y = face ? COVER_LAYOUT.faceY - cy : (H - h) / 2;
+  return {s, w, h, x, y};
+};
 
-    {/* 이름표: [로고] | 시리즈 제목 + 빨간 밑줄 */}
-    <div style={{position: 'absolute', top: 330, left: 0, right: 0, display: 'flex', justifyContent: 'center',
-      filter: 'drop-shadow(0 2px 10px rgba(0,0,0,.5))'}}>
-      <div style={{display: 'flex', alignItems: 'center', paddingBottom: 16, borderBottom: `6px solid ${BRAND.red}`, whiteSpace: 'nowrap'}}>
-        <Img src={staticFile(BRAND.logoWhite)} style={{height: 32, width: 'auto'}} />
-        <span style={{width: 2, height: 34, background: 'rgba(255,255,255,.55)', margin: '0 20px'}} />
-        <span style={{fontWeight: 600, fontSize: 42, letterSpacing: '-0.01em'}}>{seriesTitle}</span>
-      </div>
-    </div>
+const Background = (p) => {
+  const {image, srcW, srcH, face, fillTop = '#000', fillBottom = '#000'} = p;
+  if (!srcW || !srcH) {
+    return <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: p.imagePosition || '50% 50%'}} />;
+  }
+  const {w, h, x, y} = placePhoto({srcW, srcH, face});
+  const topGap = Math.max(0, y), bottomGap = Math.max(0, H - (y + h));
+  const fadeTop = topGap > 0 ? 'transparent 0, #000 10%' : '#000 0';
+  const fadeBottom = bottomGap > 0 ? '#000 90%, transparent 100%' : '#000 100%';
+  return (
+    <>
+      <AbsoluteFill style={{background: `linear-gradient(to bottom, ${fillTop} 0, ${fillTop} 50%, ${fillBottom} 50%, ${fillBottom} 100%)`}} />
+      <Img src={staticFile(image)} style={{position: 'absolute', left: x, top: y, width: w, height: h,
+        WebkitMaskImage: `linear-gradient(to bottom, ${fadeTop}, ${fadeBottom})`,
+        maskImage: `linear-gradient(to bottom, ${fadeTop}, ${fadeBottom})`}} />
+    </>
+  );
+};
 
-    {/* 회차 + 제목 */}
-    <div style={{position: 'absolute', top: titleTop, left: 72, right: 72, textAlign: 'center',
-      textShadow: '0 2px 4px rgba(0,0,0,.45), 0 4px 30px rgba(0,0,0,.5)', wordBreak: 'keep-all'}}>
-      <div style={{fontWeight: 800, fontSize: 64, letterSpacing: '0.02em', color: BRAND.white, opacity: 0.95}}>
-        Ep{episode}.
+export const Cover = (props) => {
+  const {seriesTitle, episode, episodeTitle} = props;
+  const title = (episodeTitle || '').replace(/\n/g, ' ');
+  return (
+    <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif', color: BRAND.white}}>
+      <style>{fontCss}</style>
+      <Background {...props} />
+      <AbsoluteFill style={{background:
+        'linear-gradient(to bottom,rgba(0,0,0,.55) 0,rgba(0,0,0,.25) 20%,rgba(0,0,0,0) 32%,rgba(0,0,0,0) 52%,rgba(0,0,0,.6) 66%,rgba(0,0,0,.7) 85%,rgba(0,0,0,.55) 100%)'}} />
+
+      {/* 이름표: [로고] | 시리즈 제목 + 빨간 밑줄 */}
+      <div style={{position: 'absolute', top: COVER_LAYOUT.tagTop, left: 0, right: 0, display: 'flex', justifyContent: 'center',
+        filter: 'drop-shadow(0 2px 10px rgba(0,0,0,.5))'}}>
+        <div style={{display: 'flex', alignItems: 'center', paddingBottom: 16, borderBottom: `6px solid ${BRAND.red}`, whiteSpace: 'nowrap'}}>
+          <Img src={staticFile(BRAND.logoWhite)} style={{height: 32, width: 'auto'}} />
+          <span style={{width: 2, height: 34, background: 'rgba(255,255,255,.55)', margin: '0 20px'}} />
+          <span style={{fontWeight: 600, fontSize: 42, letterSpacing: '-0.01em'}}>{seriesTitle}</span>
+        </div>
       </div>
-      <div style={{fontWeight: 900, fontSize: 168, letterSpacing: '-0.05em', lineHeight: 1.05, marginTop: 8, whiteSpace: 'pre-line'}}>
-        {episodeTitle}<Dot />
+
+      {/* 회차 + 제목 (항상 같은 높이, 한 줄) */}
+      <div style={{position: 'absolute', top: COVER_LAYOUT.epTop, left: 0, right: 0, textAlign: 'center',
+        textShadow: '0 2px 4px rgba(0,0,0,.45), 0 4px 30px rgba(0,0,0,.5)'}}>
+        <div style={{fontWeight: 800, fontSize: 64, letterSpacing: '0.02em', opacity: 0.95, lineHeight: 1}}>Ep{episode}.</div>
+        <div style={{height: 176, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 10}}>
+          <span style={{fontWeight: 900, fontSize: titleFontSize(title), letterSpacing: '-0.05em', lineHeight: 1, whiteSpace: 'nowrap'}}>
+            {title}<Dot />
+          </span>
+        </div>
       </div>
-    </div>
-  </AbsoluteFill>
-);
+    </AbsoluteFill>
+  );
+};

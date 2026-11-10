@@ -1,1 +1,15 @@
-{"image": "cover-ep4.jpg", "imagePosition": "52% 50%", "seriesTitle": "Move to Find Yourself", "episode": 4, "episodeTitle": "호기심"}
+{
+ "image": "cover-ep4.jpg",
+ "srcW": 1086,
+ "srcH": 724,
+ "face": {
+  "x": 523.0,
+  "y": 213.0,
+  "size": 100
+ },
+ "fillTop": "#605b57",
+ "fillBottom": "#c9bcb5",
+ "seriesTitle": "Move to Find Yourself",
+ "episode": 4,
+ "episodeTitle": "호기심"
+}

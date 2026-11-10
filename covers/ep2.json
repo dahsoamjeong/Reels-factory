@@ -1,1 +1,15 @@
-{"image": "cover-ep2.jpg", "layout": "cover", "imagePosition": "85% 50%", "seriesTitle": "Move to Find Yourself", "episode": 2, "episodeTitle": "불안"}
+{
+ "image": "cover-ep2.jpg",
+ "srcW": 1326,
+ "srcH": 2000,
+ "face": {
+  "x": 870,
+  "y": 870,
+  "size": 90
+ },
+ "fillTop": "#4d3c2d",
+ "fillBottom": "#74664c",
+ "seriesTitle": "Move to Find Yourself",
+ "episode": 2,
+ "episodeTitle": "불안"
+}
