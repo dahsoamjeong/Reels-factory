@@ -71,12 +71,13 @@ ffmpeg -ss 시작 -t 길이 -i 원본.mp4 -vf "scale=1080:1920,setsar=1,setpts=1
 
 모든 표지가 같은 자리에 오도록 규칙이 정해져 있어요 (`src/Cover.jsx`의 `COVER_LAYOUT`).
 - 이름표: 항상 같은 위치
-- 얼굴: 얼굴 중심이 항상 같은 높이, 크기도 비슷하게 (흐려지지 않게 최대 2배까지만 확대)
+- 사진: 확대하지 않고 원래 구도 그대로 (화면을 채우는 만큼만). 얼굴이 가운데 오게 좌우만 맞춰요
+- 얼굴이 이름표에 가릴 만큼 위에 있으면 사진을 아래로 내려요
 - "Ep N."과 제목: 항상 같은 높이, 한 줄 (긴 제목은 글자 크기만 줄어요)
 - 사진이 모자라는 위·아래는 사진 가장자리 색으로 채워요 (흐림 없음)
 
 1. 사진을 `public/cover-epN.jpg`로 넣어요 (원본 크기 그대로)
-2. `covers/ep1.json`을 복사해서 바꿔요: `srcW`/`srcH`(사진 크기), `face`(얼굴 중심 x, y와 크기, 사진 픽셀 기준), `fillTop`/`fillBottom`(가장자리 색)
+2. `covers/ep1.json`을 복사해서 바꿔요: `srcW`/`srcH`(사진 크기), `face`(얼굴 중심 x, y, 사진 픽셀 기준), `fillTop`/`fillBottom`(가장자리 색)
 3. 렌더링: `npx remotion still src/index.jsx Cover out/cover-epN.png --props=covers/epN.json`
 
 ## 클라우드 세션 참고

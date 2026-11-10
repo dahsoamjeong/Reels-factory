@@ -5,9 +5,8 @@ import {BRAND} from './Reel';
 // 릴스 표지 (1080×1920)
 // 통일 규칙:
 //  - 이름표는 모든 표지에서 같은 위치
-//  - 얼굴(face)을 주면, 얼굴 중심이 항상 같은 높이(faceY)에 오고 크기도 비슷하게(faceSize) 맞춤
-//    (작은 사진은 흐려지지 않게 maxScale배까지만 확대)
-//  - 사진이 모자라는 위/아래는 사진 가장자리 색(fillTop/fillBottom)으로 자연스럽게 채움
+//  - 사진은 확대하지 않고 원래 구도 그대로 (화면을 채우는 만큼만)
+//  - 얼굴(face)이 이름표에 가릴 만큼 위에 있으면 사진을 아래로 내리고, 빈 곳은 가장자리 색으로 채움
 //  - "Ep N." 과 제목은 모든 표지에서 같은 높이, 한 줄 (긴 제목은 글자 크기만 줄임)
 const fontCss = `
 @font-face{font-family:Pretendard;font-weight:500;src:url(${staticFile('fonts/Pretendard-Medium.woff2')})}
@@ -16,7 +15,7 @@ const fontCss = `
 `;
 
 const W = 1080, H = 1920;
-export const COVER_LAYOUT = {tagTop: 330, faceY: 740, faceSize: 240, maxScale: 2.0, epTop: 1250, titleMax: 168, titleWidth: 900};
+export const COVER_LAYOUT = {tagTop: 330, minFaceY: 600, epTop: 1250, titleMax: 168, titleWidth: 900};
 
 const Dot = () => (
   <span style={{display: 'inline-block', width: '0.2em', height: '0.2em', borderRadius: '50%',
@@ -29,14 +28,15 @@ const titleFontSize = (t) => {
   return Math.min(COVER_LAYOUT.titleMax, Math.floor(COVER_LAYOUT.titleWidth / em));
 };
 
+// 사진은 확대하지 않고 화면을 채우는 데 필요한 만큼만 맞춤 (원래 구도 유지)
+// 사진이 화면보다 넓으면 얼굴이 가운데 오게 좌우만 이동
+// 얼굴이 이름표 밑으로 들어갈 만큼 위에 있으면, 그만큼만 아래로 내리고 위는 가장자리 색으로 채움
 const placePhoto = ({srcW, srcH, face}) => {
-  const cover = Math.max(W / srcW, H / srcH);
-  let s = cover;
-  if (face) s = Math.max(cover, Math.min(COVER_LAYOUT.faceSize / face.size, Math.max(cover, COVER_LAYOUT.maxScale)));
+  const s = Math.max(W / srcW, H / srcH);
   const w = srcW * s, h = srcH * s;
-  const cx = face ? face.x * s : w / 2, cy = face ? face.y * s : h / 2;
-  const x = Math.min(0, Math.max(W - w, W / 2 - cx));
-  const y = face ? COVER_LAYOUT.faceY - cy : (H - h) / 2;
+  const x = face ? Math.min(0, Math.max(W - w, W / 2 - face.x * s)) : (W - w) / 2;
+  let y = (H - h) / 2;
+  if (face && face.y * s + y < COVER_LAYOUT.minFaceY) y = COVER_LAYOUT.minFaceY - face.y * s;
   return {s, w, h, x, y};
 };
 
