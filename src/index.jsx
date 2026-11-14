@@ -3,6 +3,7 @@ import {registerRoot, Composition, Still} from 'remotion';
 import {Reel} from './Reel';
 import {Cover} from './Cover';
 import {Narration} from './Narration';
+import {TalkCover} from './TalkCover';
 import sample from '../episodes/sample.json';
 
 const Root = () => (
@@ -18,6 +19,8 @@ const Root = () => (
   />
   <Still id="Cover" component={Cover} width={1080} height={1920}
     defaultProps={{image: 'cover-ep1.jpg', seriesTitle: 'Move to Find Yourself', episode: 1, episodeTitle: '기세와 에너지'}} />
+  <Still id="TalkCover" component={TalkCover} width={1080} height={1920}
+    defaultProps={{image: 'cover-talk-01.jpg', title: '웰니스 사업가도\n본인 웰니스가 어려워'}} />
   </>
 );
 registerRoot(Root);
