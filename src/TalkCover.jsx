@@ -16,7 +16,7 @@ const Dot = () => (
 );
 
 export const TalkCover = ({image, title, subtitle, top = 300, titleSize = 108, dark = true, imagePosition = '50% 50%', fadeEnd = 760,
-  font = 'sans', layout = 'top', bottom = 300, shade = 0.6, serifWeight = 900, logoAt = 'top', logoBottom = 270}) => {
+  font = 'sans', layout = 'top', bottom = 300, shade = 0.6, serifWeight = 900, logoAt = 'top', logoBottom = 270, shiftY = 0, fillTop = '#3a3226'}) => {
   const lines = title.split('\n');
   const serif = font === 'serif';
   const family = serif ? (serifWeight >= 900 ? '"Noto Serif KR", serif' : '"Nanum Myeongjo", serif') : 'Pretendard, sans-serif';
@@ -38,7 +38,12 @@ export const TalkCover = ({image, title, subtitle, top = 300, titleSize = 108, d
   return (
     <AbsoluteFill style={{background: '#fff', fontFamily: 'Pretendard, sans-serif'}}>
       <style>{fontCss}</style>
-      <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: imagePosition}} />
+      {/* shiftY: 사진을 확대 없이 아래로 내리고, 위 빈 곳은 사진 위쪽 색으로 자연스럽게 채움 */}
+      {shiftY > 0 && <AbsoluteFill style={{background: fillTop}} />}
+      <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: imagePosition,
+        transform: shiftY ? `translateY(${shiftY}px)` : undefined,
+        WebkitMaskImage: shiftY ? `linear-gradient(to bottom, transparent 0, #000 ${Math.min(240, shiftY)}px)` : undefined,
+        maskImage: shiftY ? `linear-gradient(to bottom, transparent 0, #000 ${Math.min(240, shiftY)}px)` : undefined}} />
       {isBottom
         ? <AbsoluteFill style={{background: `linear-gradient(to top, rgba(0,0,0,.6) 0, rgba(0,0,0,.45) ${bottom + 200}px, rgba(0,0,0,0) ${bottom + 560}px)`}} />
         : <AbsoluteFill style={{background: dark
