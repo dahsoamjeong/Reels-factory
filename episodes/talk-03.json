@@ -1,0 +1,31 @@
+{
+  "video": "talk-03.mp4",
+  "style": "B",
+  "durationSec": 60.83,
+  "captionWidth": 840,
+  "titleBox": {
+    "en": "In the AI Era, It Comes Down to People",
+    "ko": "AI 시대, 결국은 사람",
+    "top": 400
+  },
+  "captions": [
+    {"start": 0.0, "end": 4.51, "small": "AI 시대로 가면서", "big": "뭘 만들어내는 게\n너무 쉬워졌어요", "en": "In the AI era, making things has become incredibly easy."},
+    {"start": 4.56, "end": 9.93, "small": "이제 아마 그 파워는", "big": "소비자 쪽으로 넘어갈 거예요", "en": "So the power is probably going to shift to the consumer."},
+    {"start": 9.98, "end": 13.74, "small": "왜냐하면 여러분들 그런 경우 많아요", "big": "저도 해봤는데", "en": "You've probably been there. I have too.", "dot": false},
+    {"start": 13.79, "end": 18.04, "small": "바이브 코딩으로 열심히 만들어서", "big": "\"이거 써보세요\" 하는데\n아무도 안 써", "en": "I vibe-coded something, said \"try this,\" and nobody used it."},
+    {"start": 18.09, "end": 20.09, "small": "", "big": "\"이거 써보세요\"가\n너무 많이 와", "en": "Everyone gets way too many \"try this\" requests."},
+    {"start": 20.14, "end": 24.39, "small": "그래서 뭘 쓰라는 것이", "big": "이게 굉장히 어렵거든요", "en": "So getting people to actually use something is really hard."},
+    {"start": 24.44, "end": 28.34, "small": "상품을 만들어서 쓰라고 했을 때", "big": "사서 쓴 게 '참여'고", "en": "When someone buys and uses your product, that's participation,", "dot": false},
+    {"start": 28.39, "end": 30.77, "small": "그들이 팬이 되면", "big": "그게 '기여'거든요", "en": "and when they become fans, that's contribution."},
+    {"start": 30.82, "end": 35.30, "small": "그래서 참여와 기여가", "big": "앞으로는 더 중요해질 건데", "en": "Participation and contribution will matter more and more,", "dot": false},
+    {"start": 35.35, "end": 38.18, "small": "그게 결국은", "big": "사람을 움직이는 것 같아요", "en": "and in the end, it's about moving people."},
+    {"start": 38.23, "end": 42.37, "small": "결국 우리가 뭘 만들든", "big": "조직을 만들든,\n제품을 만들든", "en": "Whatever we build, an organization or a product,", "dot": false},
+    {"start": 42.42, "end": 45.15, "small": "", "big": "사람들을 참여시킬 수 있는\n방법은", "en": "the way to get people involved", "dot": false},
+    {"start": 45.20, "end": 47.83, "small": "결국은", "big": "인간에 대한\n이해인 것 같아요", "en": "comes down to understanding people."},
+    {"start": 47.88, "end": 51.58, "small": "점점 우리가", "big": "AI에 너무 매몰되지 말고", "en": "So rather than getting too absorbed in AI,", "dot": false},
+    {"start": 51.63, "end": 53.20, "small": "", "big": "사람에 대한 이해", "en": "understanding people,", "dot": false},
+    {"start": 53.25, "end": 57.49, "small": "그리고 우리가 어떻게", "big": "같이 어울려서\n살아갈 것인지", "en": "and how we can all live well together,", "dot": false},
+    {"start": 57.54, "end": 60.83, "small": "그런 부분이", "big": "점점 중요해지지 않을까", "en": "that's what will matter more and more."}
+  ],
+  "pops": []
+}
