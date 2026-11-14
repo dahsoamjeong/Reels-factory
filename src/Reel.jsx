@@ -148,6 +148,8 @@ const TitleBox = ({en, ko}) => {
         {en && <div style={{fontFamily: 'Pretendard', fontWeight: 900, fontSize: Math.min(54, Math.floor(1700 / Math.max(1, en.length))), letterSpacing: '-0.02em', color: BRAND.white, lineHeight: 1.12, whiteSpace: 'nowrap'}}>{en}</div>}
         {ko && <div style={{fontFamily: 'Pretendard', fontWeight: 800, fontSize: 50, letterSpacing: '-0.03em', color: BRAND.white, lineHeight: 1.2, marginTop: 4}}>{ko}<Dot /></div>}
       </div>
+      <Img src={staticFile(BRAND.logoWhite)} style={{position: 'absolute', top: '100%', marginTop: 22, height: 26, width: 'auto',
+        filter: 'drop-shadow(0 2px 6px rgba(0,0,0,.55))'}} />
     </div>
   );
 };

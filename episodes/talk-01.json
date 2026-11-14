@@ -3,8 +3,8 @@
   "style": "B",
   "durationSec": 124.4,
   "titleBox": {
-    "en": "When a Wellness Coach Falls Apart",
-    "ko": "웰니스 강사가 무너졌을 때"
+    "en": "To Give Good Energy, Start With Yourself",
+    "ko": "좋은 에너지를 주려면, 나부터"
   },
   "captions": [
     {
@@ -17,200 +17,172 @@
     {
       "start": 3.34,
       "end": 9.29,
-      "small": "소밍랩을 처음 시작하고",
-      "big": "7월부터 새로운 여정에\n들어서면서",
-      "en": "Since starting Soaming Lab and a new journey in July,",
+      "small": "7월, 소밍랩을 시작하며",
+      "big": "새로운 여정에 들어섰는데",
+      "en": "Since I launched Soaming Lab in July,",
       "dot": false
     },
     {
       "start": 9.34,
       "end": 12.61,
       "small": "어제 처음으로",
-      "big": "마음이 확 무너지더라고요",
-      "en": "yesterday, for the first time, my heart just collapsed."
+      "big": "마음이 확 무너졌어요",
+      "en": "yesterday was the first time I completely fell apart."
     },
     {
       "start": 12.66,
       "end": 16.55,
-      "small": "내가 좋아서 시작한 일인데",
-      "big": "'이게 맞나?' 하는 불안함",
-      "en": "I started this because I loved it, yet I wondered: is this right?",
+      "small": "좋아서 시작한 일인데",
+      "big": "'이게 맞나?' 싶은 불안함",
+      "en": "I started this because I love it, but I kept wondering if I'm doing the right thing.",
       "dot": false
     },
     {
       "start": 16.6,
       "end": 20.19,
-      "small": "그리고 조급함,",
-      "big": "막연함도 있었던 것 같아요",
-      "en": "There was impatience, and uncertainty too."
+      "small": "그리고",
+      "big": "조급함과 막연함까지",
+      "en": "On top of that, I felt impatient and lost."
     },
     {
       "start": 20.24,
       "end": 26.41,
       "small": "안정적인 월급을 받다가",
-      "big": "사업에 뛰어든\n많은 창업가분들이",
-      "en": "Many founders who left a steady paycheck for business",
+      "big": "창업에 뛰어든 분들이라면",
+      "en": "If you've ever left a steady paycheck to start your own thing,",
       "dot": false
     },
     {
       "start": 26.46,
       "end": 29.91,
       "small": "",
-      "big": "모두 겪었을 과정이라고\n생각해요",
-      "en": "have probably gone through this too."
+      "big": "다들 한 번쯤 겪어봤을 거예요",
+      "en": "you've probably been through this too."
     },
     {
       "start": 29.96,
       "end": 36.55,
-      "small": "저도 계속 월급을 받다가",
-      "big": "새로운 길을 개척하는\n지금",
-      "en": "I lived on a salary too, and now that I'm forging a new path,",
+      "small": "저도 월급을 받다가",
+      "big": "새로운 길을 개척하는 지금",
+      "en": "I used to get a paycheck too, and now that I'm carving my own path,",
       "dot": false
     },
     {
       "start": 36.6,
       "end": 40.89,
-      "small": "불안함, 하루하루 어떻게 살지에 대한",
-      "big": "걱정이 따라오더라고요",
-      "en": "anxiety and worry about each day follow me."
+      "small": "하루하루 어떻게 살지",
+      "big": "불안과 걱정이 따라와요",
+      "en": "the anxiety of just getting through each day follows me everywhere."
     },
     {
       "start": 40.94,
       "end": 47.79,
-      "small": "감사하게도 신뢰가 있던 관계들을 통해",
-      "big": "연결이 일어나고",
-      "en": "Thankfully, trusted relationships have led to connections,",
+      "small": "감사하게도 믿어주는 사람들 덕분에",
+      "big": "새로운 연결이 생기고",
+      "en": "Thankfully, people who believe in me keep opening doors,",
       "dot": false
     },
     {
       "start": 47.84,
       "end": 52.49,
-      "small": "새로운 것들을 해볼 수 있는",
-      "big": "기회들이 하나씩\n생기고 있는데",
-      "en": "and chances to try new things keep coming,",
-      "dot": false
+      "small": "새로운 걸 해볼 수 있는",
+      "big": "기회도 하나씩 생기고 있어요",
+      "en": "and new opportunities keep coming my way."
     },
     {
       "start": 52.54,
       "end": 55.51,
-      "small": "제가 꾸는 비전과 꿈이",
-      "big": "너무 크고",
-      "en": "but my vision and dreams are so big,",
+      "small": "그런데 제가 꾸는 꿈은 너무 크고",
+      "big": "준비하는 하루하루는",
+      "en": "But my dreams are big, and while I'm working toward them,",
       "dot": false
     },
     {
       "start": 55.56,
       "end": 59.55,
-      "small": "준비하는 과정 가운데",
-      "big": "'하루하루 어떻게 살지?'",
-      "en": "and while preparing, I ask how to get through each day.",
-      "dot": false
+      "small": "",
+      "big": "'오늘은 어떻게 살지?' 싶더라고요",
+      "en": "I keep asking myself how I'm going to get through today."
     },
     {
       "start": 59.6,
       "end": 64.01,
-      "small": "오늘 하루도 내 마음을 지키는 게",
-      "big": "정말 중요하다는 걸\n깨달았어요",
-      "en": "I realized how important it is to guard my heart, today too."
+      "small": "그래서 깨달았어요",
+      "big": "오늘 하루, 내 마음을 지키는 게\n가장 중요하다는 걸",
+      "en": "That's when it hit me: protecting my peace, one day at a time, matters most."
     },
     {
       "start": 64.06,
       "end": 72.51,
-      "small": "웰니스 사업을 하는 저도",
+      "small": "웰니스 사업을 하면서",
       "big": "정작 제 웰니스는\n못 챙기고 있었어요",
-      "en": "I run a wellness business, yet I wasn't caring for my own wellness."
+      "en": "I run a wellness business, but I wasn't taking care of my own wellness."
     },
     {
       "start": 72.56,
-      "end": 75.41,
-      "small": "지금 몇 달째",
-      "big": "잠도 제대로 못 잤고",
-      "en": "For months, I haven't slept properly,",
-      "dot": false
-    },
-    {
-      "start": 75.46,
       "end": 81.01,
-      "small": "걱정과 불안함에",
-      "big": "몸이 많이 망가져 있더라고요",
-      "en": "and worry and anxiety have worn down my body."
+      "small": "몇 달째 잠도 제대로 못 자고,",
+      "big": "걱정과 불안에\n몸이 많이 망가졌더라고요",
+      "en": "I hadn't slept properly in months, and the stress had really taken a toll on my body."
     },
     {
       "start": 81.06,
       "end": 89.29,
-      "small": "나조차 웰니스를 못 하는데",
+      "small": "나조차 못 챙기는데",
       "big": "어떻게 사람들에게\n웰니스를 전하지?",
-      "en": "If I can't do wellness myself, how can I share it with others?"
+      "en": "If I can't take care of myself, how can I help anyone else?"
     },
     {
       "start": 89.34,
       "end": 95.71,
-      "small": "제 마음을 지키고, 제 웰니스를 잘해야",
+      "small": "내 마음과 웰니스부터 챙겨야",
       "big": "사람들에게도\n잘 전할 수 있으니까",
-      "en": "I need to guard my heart and my wellness to pass it on,",
-      "dot": false
+      "en": "I have to look after my own heart and wellness before I can pass it on."
     },
     {
       "start": 95.76,
-      "end": 98.41,
-      "small": "일단 나부터",
-      "big": "수면 패턴을 잘 지키고",
-      "en": "so first, I'll keep a healthy sleep routine,",
-      "dot": false
-    },
-    {
-      "start": 98.46,
       "end": 102.41,
-      "small": "에너지를 끌어올려서",
-      "big": "사람들에게 좋은 에너지를\n줄 수 있도록",
-      "en": "and lift my energy so I can give good energy to others.",
+      "small": "그래서 일단 나부터",
+      "big": "수면 패턴을 지키고\n에너지를 끌어올려서",
+      "en": "So I'm starting with me: fixing my sleep and getting my energy back,",
       "dot": false
     },
     {
       "start": 102.46,
       "end": 108.61,
-      "small": "먼저",
-      "big": "깨끗한 통로가 되어야겠다고\n깨달았어요",
-      "en": "I realized I have to become a clean channel first."
+      "small": "좋은 에너지를 전하려면 먼저",
+      "big": "깨끗한 통로가\n되어야겠다고 깨달았어요",
+      "en": "because to pass on good energy, I need to be a clear channel first."
     },
     {
       "start": 108.66,
       "end": 112.41,
       "small": "어렵더라고요.",
-      "big": "진짜 좋아서 시작한 일인데",
-      "en": "It's hard. I started this because I truly loved it,",
+      "big": "정말 좋아서 시작한 일인데도",
+      "en": "It's been hard. Even though I truly love what I do,",
       "dot": false
     },
     {
       "start": 112.46,
       "end": 115.59,
       "small": "",
-      "big": "이 길이 맞을까\n계속 의문이 들기도 하고",
-      "en": "yet I keep asking if this is the right path.",
-      "dot": false
+      "big": "이 길이 맞을까\n계속 의문이 들고",
+      "en": "I keep asking myself if this is the right path."
     },
     {
       "start": 115.64,
       "end": 118.09,
-      "small": "인도해주셔서",
-      "big": "여기까지 왔다고 생각하는데",
-      "en": "I believe I was guided here,",
+      "small": "하나님이 인도해주셔서",
+      "big": "여기까지 왔다고 믿는데",
+      "en": "I believe God brought me here,",
       "dot": false
     },
     {
       "start": 118.14,
-      "end": 122.01,
-      "small": "하루하루 나를 증명해야 한다는",
-      "big": "그 생각과 마음이",
-      "en": "but the thought that I must prove myself every day",
-      "dot": false
-    },
-    {
-      "start": 122.06,
       "end": 124.4,
-      "small": "",
+      "small": "하루하루 나를 증명해야 한다는 생각이",
       "big": "저를 많이 아프게 하더라고요",
-      "en": "really hurt me."
+      "en": "but feeling like I have to prove myself every single day has really been hurting me."
     }
   ],
   "pops": []
