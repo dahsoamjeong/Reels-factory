@@ -1,1 +1,1 @@
-{"image": "cover-talk-03.jpg", "title": "AI 시대,\n결국 사람", "subtitle": "In the AI Era, It Comes Down to People", "fadeEnd": 620, "font": "serif", "titleSize": 112, "dark": true, "serifWeight": 800, "logoAt": "top", "top": 205, "imagePosition": "50% 50%"}
+{"image": "cover-talk-03.jpg", "title": "AI 시대,\n결국 사람", "subtitle": "In the AI Era, It Comes Down to People", "fadeEnd": 720, "font": "serif", "titleSize": 112, "dark": false, "shade": 0.6, "serifWeight": 800, "logoAt": "bottom", "top": 240, "imagePosition": "50% 50%", "shiftY": 240, "fillTop": "#7d7d7a"}
