@@ -1,0 +1,689 @@
+{
+ "audio": "narration-intro.wav",
+ "durationSec": 269.87,
+ "seriesTitle": "Move to Find Yourself",
+ "opening": {
+  "start": 0.4,
+  "end": 4.87,
+  "text": "사막에서도\n몽클레어 팔,\n소밍입니다"
+ },
+ "scenes": [
+  {
+   "type": "image",
+   "src": "intro/img13.jpg",
+   "motion": "in",
+   "position": "45% 30%",
+   "start": 0.0
+  },
+  {
+   "type": "video",
+   "src": "intro/a.mp4",
+   "from": 2.5,
+   "start": 4.75
+  },
+  {
+   "type": "image",
+   "src": "intro/profile.jpg",
+   "motion": "out",
+   "position": "50% 30%",
+   "start": 10.74
+  },
+  {
+   "type": "video",
+   "src": "intro/hero.mp4",
+   "from": 96.5,
+   "start": 15.75
+  },
+  {
+   "type": "video",
+   "src": "intro/a.mp4",
+   "from": 23.0,
+   "start": 20.65
+  },
+  {
+   "type": "image",
+   "src": "intro/photo21.jpg",
+   "motion": "in",
+   "start": 26.84
+  },
+  {
+   "type": "video",
+   "src": "intro/v2.mp4",
+   "from": 0.7,
+   "start": 34.73
+  },
+  {
+   "type": "image",
+   "src": "intro/photo11.jpg",
+   "motion": "in",
+   "start": 42.73
+  },
+  {
+   "type": "image",
+   "src": "intro/photo18.jpg",
+   "motion": "pan",
+   "panFrom": 0,
+   "panTo": 100,
+   "start": 44.37
+  },
+  {
+   "type": "image",
+   "src": "intro/photo27.jpg",
+   "motion": "in",
+   "position": "50% 25%",
+   "start": 54.06
+  },
+  {
+   "type": "image",
+   "src": "intro/photo10.jpg",
+   "motion": "out",
+   "start": 61.38
+  },
+  {
+   "type": "image",
+   "src": "intro/photo22.jpg",
+   "motion": "in",
+   "start": 68.03
+  },
+  {
+   "type": "image",
+   "src": "intro/photo08.jpg",
+   "motion": "in",
+   "start": 72.24
+  },
+  {
+   "type": "video",
+   "src": "intro/hero.mp4",
+   "from": 43.0,
+   "start": 80.22
+  },
+  {
+   "type": "image",
+   "src": "intro/photo25.jpg",
+   "motion": "in",
+   "start": 89.82
+  },
+  {
+   "type": "video",
+   "src": "intro/hero.mp4",
+   "from": 12.3,
+   "start": 90.27
+  },
+  {
+   "type": "image",
+   "src": "intro/photo09.jpg",
+   "motion": "in",
+   "start": 93.97
+  },
+  {
+   "type": "image",
+   "src": "intro/photo05.jpg",
+   "motion": "pan",
+   "panFrom": 0,
+   "panTo": 100,
+   "start": 101.79
+  },
+  {
+   "type": "video",
+   "src": "intro/hero.mp4",
+   "from": 37.0,
+   "start": 112.7
+  },
+  {
+   "type": "image",
+   "src": "intro/photo26.jpg",
+   "motion": "in",
+   "start": 117.8
+  },
+  {
+   "type": "image",
+   "src": "intro/photo06.jpg",
+   "motion": "in",
+   "position": "50% 30%",
+   "start": 121.04
+  },
+  {
+   "type": "image",
+   "src": "intro/photo02.jpg",
+   "motion": "out",
+   "start": 128.16
+  },
+  {
+   "type": "video",
+   "src": "intro/hero.mp4",
+   "from": 57.1,
+   "start": 133.85
+  },
+  {
+   "type": "image",
+   "src": "intro/photo28.jpg",
+   "motion": "in",
+   "start": 139.55
+  },
+  {
+   "type": "image",
+   "src": "intro/photo19.jpg",
+   "motion": "pan",
+   "panFrom": 100,
+   "panTo": 0,
+   "start": 143.48
+  },
+  {
+   "type": "image",
+   "src": "intro/photo29.jpg",
+   "motion": "pan",
+   "panFrom": 20,
+   "panTo": 80,
+   "start": 149.2
+  },
+  {
+   "type": "image",
+   "src": "intro/photo16.jpg",
+   "motion": "in",
+   "start": 156.24
+  },
+  {
+   "type": "video",
+   "src": "intro/hero.mp4",
+   "from": 82.7,
+   "start": 159.93
+  },
+  {
+   "type": "image",
+   "src": "intro/photo14.jpg",
+   "motion": "in",
+   "start": 168.03
+  },
+  {
+   "type": "image",
+   "src": "intro/photo17.jpg",
+   "motion": "out",
+   "start": 171.39
+  },
+  {
+   "type": "video",
+   "src": "intro/c.mp4",
+   "from": 0.0,
+   "start": 179.46
+  },
+  {
+   "type": "image",
+   "src": "intro/img14.jpg",
+   "motion": "in",
+   "position": "40% 50%",
+   "start": 184.36
+  },
+  {
+   "type": "video",
+   "src": "intro/hero.mp4",
+   "from": 70.8,
+   "start": 193.11
+  },
+  {
+   "type": "image",
+   "src": "intro/photo15.jpg",
+   "motion": "in",
+   "start": 203.61
+  },
+  {
+   "type": "image",
+   "src": "intro/photo01.jpg",
+   "motion": "in",
+   "start": 205.62
+  },
+  {
+   "type": "video",
+   "src": "intro/b.mp4",
+   "from": 0.0,
+   "start": 213.81
+  },
+  {
+   "type": "image",
+   "src": "intro/img15.jpg",
+   "motion": "in",
+   "position": "52% 40%",
+   "start": 224.36
+  },
+  {
+   "type": "image",
+   "src": "intro/photo03.jpg",
+   "motion": "out",
+   "start": 229.01
+  },
+  {
+   "type": "video",
+   "src": "intro/c.mp4",
+   "from": 8.0,
+   "start": 234.78
+  },
+  {
+   "type": "image",
+   "src": "intro/photo12.jpg",
+   "motion": "pan",
+   "panFrom": 0,
+   "panTo": 100,
+   "start": 243.18
+  },
+  {
+   "type": "image",
+   "src": "intro/img11.jpg",
+   "motion": "in",
+   "position": "70% 40%",
+   "start": 252.78
+  },
+  {
+   "type": "image",
+   "src": "intro/img12.jpg",
+   "motion": "out",
+   "position": "50% 25%",
+   "start": 260.07
+  }
+ ],
+ "subtitles": [
+  {
+   "start": 4.92,
+   "end": 10.57,
+   "text": "안녕하세요. 저는 사막에서도 몽클레어 팔, 정다솜."
+  },
+  {
+   "start": 10.92,
+   "end": 13.89,
+   "text": "'Move to Find Yourself'"
+  },
+  {
+   "start": 13.89,
+   "end": 15.57,
+   "text": "소밍랩 대표 소밍입니다."
+  },
+  {
+   "start": 15.92,
+   "end": 20.47,
+   "text": "이건 예전 직장 상사분이 저를 보고 붙여주신 별명인데요."
+  },
+  {
+   "start": 20.82,
+   "end": 24.16,
+   "text": "기세와 에너지로 무언가를 추진력 있게 만들어내는"
+  },
+  {
+   "start": 24.16,
+   "end": 26.21,
+   "text": "저를 보고 해주신 말이었어요."
+  },
+  {
+   "start": 27.01,
+   "end": 30.49,
+   "text": "저는 중학교 3학년 때 공부하는 이유를 찾고"
+  },
+  {
+   "start": 30.49,
+   "end": 34.55,
+   "text": "싶어서 부모님을 1년 동안 설득해 미국으로 갔어요."
+  },
+  {
+   "start": 34.9,
+   "end": 38.27,
+   "text": "거기서 '외국인은 틀려도 괜찮아!'라는"
+  },
+  {
+   "start": 38.27,
+   "end": 41.47,
+   "text": "마인드셋으로 영어를 마구마구 뱉었고,"
+  },
+  {
+   "start": 41.47,
+   "end": 44.2,
+   "text": "GPA 4.5 만점을 받았어요."
+  },
+  {
+   "start": 44.55,
+   "end": 47.34,
+   "text": "한국을 잘 모르는 외국인 친구들에게 한국을"
+  },
+  {
+   "start": 47.34,
+   "end": 49.88,
+   "text": "알리고 싶어서 International"
+  },
+  {
+   "start": 49.88,
+   "end": 52.67,
+   "text": "Club을 만들고, 1년 동안 한국 문화를"
+  },
+  {
+   "start": 52.67,
+   "end": 53.89,
+   "text": "소개하기도 했어요."
+  },
+  {
+   "start": 54.24,
+   "end": 57.93,
+   "text": "중세국어 시간에는 질문을 너무 많이 해서 하루에"
+  },
+  {
+   "start": 57.93,
+   "end": 61.2,
+   "text": "두 번만 질문하라는 제한을 받기도 했고요."
+  },
+  {
+   "start": 61.55,
+   "end": 64.77,
+   "text": "해부학 선생님께는 40년 교직 생활 중 가장"
+  },
+  {
+   "start": 64.77,
+   "end": 67.85,
+   "text": "기억에 남는 학생이라는 이야기를 들었어요."
+  },
+  {
+   "start": 68.2,
+   "end": 72.06,
+   "text": "졸업할 때는 서로 눈물을 흘리며 헤어지기도 했고요."
+  },
+  {
+   "start": 72.41,
+   "end": 75.93,
+   "text": "미국 유학은 저를 가장 많이 성장시켰지만,"
+  },
+  {
+   "start": 75.93,
+   "end": 79.59,
+   "text": "동시에 가장 많이 아팠던 시간이기도 했어요."
+  },
+  {
+   "start": 80.39,
+   "end": 83.25,
+   "text": "대학에 와서는 ICT 창업학부 Global"
+  },
+  {
+   "start": 83.25,
+   "end": 86.12,
+   "text": "Entrepreneurship과 UI UX"
+  },
+  {
+   "start": 86.12,
+   "end": 90.1,
+   "text": "디자인 전공을 하며 1학년 때부터 취미가 특강 듣기였어요."
+  },
+  {
+   "start": 90.45,
+   "end": 93.86,
+   "text": "그때 만난 연사분들과의 인연을 대학 내내"
+  },
+  {
+   "start": 93.86,
+   "end": 96.5,
+   "text": "이어가면서 스타트업, 중소기업,"
+  },
+  {
+   "start": 96.5,
+   "end": 100.06,
+   "text": "중견기업, 대기업 프로젝트를 직접 제안하고"
+  },
+  {
+   "start": 100.06,
+   "end": 101.62,
+   "text": "따와서 진행했어요."
+  },
+  {
+   "start": 101.97,
+   "end": 105.29,
+   "text": "여자 친구들이 운동을 가르쳐달라고 하길래 냅다"
+  },
+  {
+   "start": 105.29,
+   "end": 107.55,
+   "text": "클래스를 열어 24명을 모았고,"
+  },
+  {
+   "start": 107.55,
+   "end": 110.75,
+   "text": "한 달에 5만 원씩 받아 6개월 동안 운동을"
+  },
+  {
+   "start": 110.75,
+   "end": 112.08,
+   "text": "가르치기도 했어요."
+  },
+  {
+   "start": 112.88,
+   "end": 116.3,
+   "text": "졸업 후에는 어떤 직장에 들어가야 할지 몰라"
+  },
+  {
+   "start": 116.3,
+   "end": 119.73,
+   "text": "30명이 넘는 연사님들께 콜드콜 연락을 보내"
+  },
+  {
+   "start": 119.73,
+   "end": 120.87,
+   "text": "밥을 먹었어요."
+  },
+  {
+   "start": 121.22,
+   "end": 124.81,
+   "text": "그러다 기도 중에 갑자기 떠오른 투자자님이 있어"
+  },
+  {
+   "start": 124.81,
+   "end": 127.99,
+   "text": "사업 아이템을 들고 조언을 구하러 갔다가,"
+  },
+  {
+   "start": 128.34,
+   "end": 130.58,
+   "text": "그 자리에서 첫 직장의 Founding"
+  },
+  {
+   "start": 130.58,
+   "end": 133.68,
+   "text": "Member가 되어 창업가 커뮤니티를 키우게 됐어요."
+  },
+  {
+   "start": 134.03,
+   "end": 137.49,
+   "text": "회사에 다니면서도 저를 좋게 봐주신 대표님들이"
+  },
+  {
+   "start": 137.49,
+   "end": 140.4,
+   "text": "기회를 주셔서 다양한 프로젝트를 했고,"
+  },
+  {
+   "start": 140.4,
+   "end": 143.3,
+   "text": "주말에는 다른 회사의 일도 함께했어요."
+  },
+  {
+   "start": 143.65,
+   "end": 146.78,
+   "text": "창업이 하고 싶어서 이틀 만에 12명의 팀원을"
+  },
+  {
+   "start": 146.78,
+   "end": 149.02,
+   "text": "모아 프로젝트를 진행하기도 했고,"
+  },
+  {
+   "start": 149.37,
+   "end": 152.57,
+   "text": "제 생각을 돈 주고 사고 싶다는 이야기에"
+  },
+  {
+   "start": 152.57,
+   "end": 155.61,
+   "text": "'생각구독'이라는 서비스도 운영했어요."
+  },
+  {
+   "start": 156.41,
+   "end": 159.75,
+   "text": "다음 스텝 없이 소명을 찾으러 퇴사를 했고,"
+  },
+  {
+   "start": 160.1,
+   "end": 163.98,
+   "text": "이후 하나님의 인도하심으로 중견기업과 IT"
+  },
+  {
+   "start": 163.98,
+   "end": 166.67,
+   "text": "스타트업에서 마케팅, 교육팀,"
+  },
+  {
+   "start": 166.67,
+   "end": 171.22,
+   "text": "영업, 사업개발까지 정말 다양한 일을 경험했어요."
+  },
+  {
+   "start": 171.57,
+   "end": 174.99,
+   "text": "이 모든 직장과 기회가 대부분 이력서 한 장"
+  },
+  {
+   "start": 174.99,
+   "end": 178.84,
+   "text": "직접 내민 적 없이, 추천으로 시작됐다는 거예요."
+  },
+  {
+   "start": 179.64,
+   "end": 183.08,
+   "text": "그리고 지금은 직장을 박차고 나와 새로운 길을"
+  },
+  {
+   "start": 183.08,
+   "end": 184.19,
+   "text": "걷고 있습니다."
+  },
+  {
+   "start": 184.54,
+   "end": 187.89,
+   "text": "제가 가진 은사가 무엇인지 깊이 묵상하다 보니,"
+  },
+  {
+   "start": 187.89,
+   "end": 190.61,
+   "text": "하나님이 제게 주신 은사는 '에너지'와"
+  },
+  {
+   "start": 190.61,
+   "end": 192.93,
+   "text": "'추진력'이라는 생각이 들었어요."
+  },
+  {
+   "start": 193.28,
+   "end": 196.94,
+   "text": "그리고 제가 생각하는 사랑의 언어는 누군가에게"
+  },
+  {
+   "start": 196.94,
+   "end": 200.75,
+   "text": "가치를 주고, 그 사람이 그 가치를 온전히 누린"
+  },
+  {
+   "start": 200.75,
+   "end": 205.44,
+   "text": "뒤, 다시 다른 사람을 도와주는 것이라는 생각도 들었어요."
+  },
+  {
+   "start": 205.79,
+   "end": 209.5,
+   "text": "그렇게 사람들에게 건강함을 통해 더 많은 가치를"
+  },
+  {
+   "start": 209.5,
+   "end": 213.63,
+   "text": "전하고 싶다는 마음으로 운동 지도자 자격증을 땄고요."
+  },
+  {
+   "start": 213.98,
+   "end": 218.07,
+   "text": "지금은 브랜드와 지자체, 공간에 직접 제안하면서"
+  },
+  {
+   "start": 218.07,
+   "end": 221.53,
+   "text": "움직임을 수단으로 다양한 웰니스 클래스를"
+  },
+  {
+   "start": 221.53,
+   "end": 223.73,
+   "text": "기획하고 운영하고 있어요."
+  },
+  {
+   "start": 224.53,
+   "end": 227.12,
+   "text": "제가 선택한 방향은 Faith +"
+  },
+  {
+   "start": 227.12,
+   "end": 228.84,
+   "text": "Wellness입니다."
+  },
+  {
+   "start": 229.19,
+   "end": 232.36,
+   "text": "저에게 웰니스는 단순히 운동을 가르치고 몸을"
+  },
+  {
+   "start": 232.36,
+   "end": 234.61,
+   "text": "건강하게 만드는 일이 아니에요."
+  },
+  {
+   "start": 234.96,
+   "end": 238.56,
+   "text": "건강한 몸과 마음을 통해 삶의 기쁨을 회복하고,"
+  },
+  {
+   "start": 238.56,
+   "end": 241.48,
+   "text": "더 많은 사람에게 사랑을 전하는 하나의"
+  },
+  {
+   "start": 241.48,
+   "end": 243.0,
+   "text": "방법이라고 생각해요."
+  },
+  {
+   "start": 243.35,
+   "end": 246.76,
+   "text": "저는 웰니스 커뮤니티를 통해 더 많은 사람들이"
+  },
+  {
+   "start": 246.76,
+   "end": 250.3,
+   "text": "건강해지고, 서로의 에너지와 가치를 나누며 함께"
+  },
+  {
+   "start": 250.3,
+   "end": 252.61,
+   "text": "성장하는 문화를 만들고 싶어요."
+  },
+  {
+   "start": 252.96,
+   "end": 256.43,
+   "text": "궁극적으로는 웰니스를 통해 복음을 전하고,"
+  },
+  {
+   "start": 256.43,
+   "end": 259.89,
+   "text": "사람을 살리는 건강전도사가 되고 싶습니다."
+  },
+  {
+   "start": 260.24,
+   "end": 262.55,
+   "text": "저는 에너지로 기회를 만들고,"
+  },
+  {
+   "start": 262.55,
+   "end": 266.29,
+   "text": "사람을 연결하며, 이제는 웰니스로 사람을 살리는"
+  },
+  {
+   "start": 266.29,
+   "end": 267.87,
+   "text": "일을 하고 있습니다."
+  }
+ ]
+}

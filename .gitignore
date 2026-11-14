@@ -1,0 +1,10 @@
+node_modules/
+out/
+public/*.mp4
+public/*.mov
+*.wav
+public/cover-*.jpg
+public/intro/
+public/narration*.wav
+public/talk-*.mp4
+public/cover-talk-*.jpg
