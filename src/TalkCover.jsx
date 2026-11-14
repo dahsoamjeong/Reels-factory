@@ -16,7 +16,7 @@ const Dot = () => (
 );
 
 export const TalkCover = ({image, title, subtitle, top = 300, titleSize = 108, dark = true, imagePosition = '50% 50%', fadeEnd = 760,
-  font = 'sans', layout = 'top', bottom = 300}) => {
+  font = 'sans', layout = 'top', bottom = 300, shade = 0.6}) => {
   const lines = title.split('\n');
   const serif = font === 'serif';
   const family = serif ? '"Noto Serif KR", serif' : 'Pretendard, sans-serif';
@@ -43,7 +43,7 @@ export const TalkCover = ({image, title, subtitle, top = 300, titleSize = 108, d
         ? <AbsoluteFill style={{background: `linear-gradient(to top, rgba(0,0,0,.6) 0, rgba(0,0,0,.45) ${bottom + 200}px, rgba(0,0,0,0) ${bottom + 560}px)`}} />
         : <AbsoluteFill style={{background: dark
             ? `linear-gradient(to bottom, rgba(255,255,255,.92) 0, rgba(255,255,255,.88) ${fadeEnd - 260}px, rgba(255,255,255,0) ${fadeEnd}px)`
-            : `linear-gradient(to bottom, rgba(0,0,0,.6) 0, rgba(0,0,0,.5) ${fadeEnd - 260}px, rgba(0,0,0,0) ${fadeEnd}px)`}} />}
+            : `linear-gradient(to bottom, rgba(0,0,0,${shade}) 0, rgba(0,0,0,${shade * 0.85}) ${fadeEnd - 260}px, rgba(0,0,0,0) ${fadeEnd}px)`}} />}
       <div style={{position: 'absolute', ...(isBottom ? {bottom} : {top}), left: 70, right: 70, textAlign: 'center', color: ink}}>{block}</div>
     </AbsoluteFill>
   );
