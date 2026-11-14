@@ -155,13 +155,13 @@ const TitleBox = ({en, ko, top = 290}) => {
 };
 
 // 기본 자막: 작은 줄 + 큰 줄 + 영어 번역
-const Caption = ({small, big, en, font, dot = true, durationInFrames, st}) => {
+const Caption = ({small, big, en, font, dot = true, durationInFrames, st, width = 900}) => {
   const frame = useCurrentFrame();
   const enter = interpolate(frame, [0, 6], [0, 1], clamp);
   const exit = interpolate(frame, [durationInFrames - 4, durationInFrames], [1, 0], clamp);
   return (
     <div style={{
-      position: 'absolute', left: 72, top: 1130, width: 900, color: BRAND.white,
+      position: 'absolute', left: 72, top: 1130, width, color: BRAND.white,
       textShadow: '0 2px 4px rgba(0,0,0,.5), 0 2px 16px rgba(0,0,0,.6)', wordBreak: 'keep-all', whiteSpace: 'pre-line',
       opacity: enter * exit, transform: `translateY(${interpolate(enter, [0, 1], [18, 0])}px)`,
     }}>
@@ -213,7 +213,7 @@ const Scatter = ({texts, font, durationInFrames, st}) => {
   );
 };
 
-export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTitle, titleBox, captions = [], pops = []}) => {
+export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTitle, titleBox, captionWidth = 900, captions = [], pops = []}) => {
   const {fps} = useVideoConfig();
   const st = withFont(STYLES[style] || STYLES.A, font);
   const f = (sec) => Math.round(sec * fps);
@@ -235,7 +235,7 @@ export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTit
       })}
       {captions.map((c, i) => (
         <Sequence key={'c' + i} from={f(c.start)} durationInFrames={f(c.end - c.start)} layout="none">
-          <Caption {...c} durationInFrames={f(c.end - c.start)} st={st} />
+          <Caption {...c} durationInFrames={f(c.end - c.start)} st={st} width={captionWidth} />
         </Sequence>
       ))}
     </AbsoluteFill>
