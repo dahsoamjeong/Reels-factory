@@ -16,18 +16,18 @@ const Dot = () => (
 );
 
 export const TalkCover = ({image, title, subtitle, top = 300, titleSize = 108, dark = true, imagePosition = '50% 50%', fadeEnd = 760,
-  font = 'sans', layout = 'top', bottom = 300, shade = 0.6}) => {
+  font = 'sans', layout = 'top', bottom = 300, shade = 0.6, serifWeight = 900, logoAt = 'top', logoBottom = 270}) => {
   const lines = title.split('\n');
   const serif = font === 'serif';
-  const family = serif ? '"Noto Serif KR", serif' : 'Pretendard, sans-serif';
+  const family = serif ? (serifWeight >= 900 ? '"Noto Serif KR", serif' : '"Nanum Myeongjo", serif') : 'Pretendard, sans-serif';
   const isBottom = layout === 'bottom';
   const light = isBottom || !dark;   // 흰 글씨
   const ink = light ? BRAND.white : BRAND.black;
   const shadow = light ? '0 3px 6px rgba(0,0,0,.55), 0 6px 28px rgba(0,0,0,.55)' : 'none';
   const block = (
     <>
-      <Img src={staticFile(light ? BRAND.logoWhite : BRAND.logoBlack)} style={{height: 30, width: 'auto', filter: light ? 'drop-shadow(0 2px 6px rgba(0,0,0,.6))' : 'none'}} />
-      <div style={{marginTop: 30, fontFamily: family, fontWeight: 900, fontSize: titleSize, lineHeight: serif ? 1.2 : 1.16,
+      {logoAt === 'top' && <Img src={staticFile(light ? BRAND.logoWhite : BRAND.logoBlack)} style={{height: 30, width: 'auto', marginBottom: 30, filter: light ? 'drop-shadow(0 2px 6px rgba(0,0,0,.6))' : 'none'}} />}
+      <div style={{fontFamily: family, fontWeight: serif ? serifWeight : 900, fontSize: titleSize, lineHeight: serif ? 1.2 : 1.16,
         letterSpacing: serif ? '-0.03em' : '-0.045em', textShadow: shadow}}>
         {lines.map((l, i) => <div key={i} style={{whiteSpace: 'nowrap'}}>{l}{i === lines.length - 1 ? <Dot /> : null}</div>)}
       </div>
@@ -45,6 +45,12 @@ export const TalkCover = ({image, title, subtitle, top = 300, titleSize = 108, d
             ? `linear-gradient(to bottom, rgba(255,255,255,.92) 0, rgba(255,255,255,.88) ${fadeEnd - 260}px, rgba(255,255,255,0) ${fadeEnd}px)`
             : `linear-gradient(to bottom, rgba(0,0,0,${shade}) 0, rgba(0,0,0,${shade * 0.85}) ${fadeEnd - 260}px, rgba(0,0,0,0) ${fadeEnd}px)`}} />}
       <div style={{position: 'absolute', ...(isBottom ? {bottom} : {top}), left: 70, right: 70, textAlign: 'center', color: ink}}>{block}</div>
+      {logoAt === 'bottom' && <>
+        <AbsoluteFill style={{background: `linear-gradient(to top, rgba(0,0,0,.5) 0, rgba(0,0,0,.35) ${logoBottom + 60}px, rgba(0,0,0,0) ${logoBottom + 300}px)`}} />
+        <div style={{position: 'absolute', bottom: logoBottom, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
+          <Img src={staticFile(BRAND.logoWhite)} style={{height: 34, width: 'auto', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,.6))'}} />
+        </div>
+      </>}
     </AbsoluteFill>
   );
 };
