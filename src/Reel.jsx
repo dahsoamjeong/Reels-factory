@@ -139,11 +139,11 @@ const SeriesTag = ({title, episode, episodeTitle, styleName, st}) => {
 };
 
 // 제목 박스 (말하는 영상용): 맨 위 검은 박스 안에 영어 제목 + 한국어 제목
-const TitleBox = ({en, ko}) => {
+const TitleBox = ({en, ko, top = 290}) => {
   const frame = useCurrentFrame();
   const o = interpolate(frame, [0, 8], [0, 1], clamp);
   return (
-    <div style={{position: 'absolute', top: 130, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: o}}>
+    <div style={{position: 'absolute', top, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: o}}>
       <div style={{background: BRAND.black, padding: '18px 36px 20px', textAlign: 'center', maxWidth: 960}}>
         {en && <div style={{fontFamily: 'Pretendard', fontWeight: 900, fontSize: Math.min(54, Math.floor(1700 / Math.max(1, en.length))), letterSpacing: '-0.02em', color: BRAND.white, lineHeight: 1.12, whiteSpace: 'nowrap'}}>{en}</div>}
         {ko && <div style={{fontFamily: 'Pretendard', fontWeight: 800, fontSize: 50, letterSpacing: '-0.03em', color: BRAND.white, lineHeight: 1.2, marginTop: 4}}>{ko}<Dot /></div>}
