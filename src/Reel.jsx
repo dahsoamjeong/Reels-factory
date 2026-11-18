@@ -139,9 +139,13 @@ const SeriesTag = ({title, episode, episodeTitle, styleName, st}) => {
 };
 
 // 제목 박스 (말하는 영상용): 맨 위 검은 박스 안에 영어 제목 + 한국어 제목
-const TitleBox = ({en, ko, top = 290}) => {
+const TitleBox = ({en, ko, top = 290, hideAfter}) => {
   const frame = useCurrentFrame();
-  const o = interpolate(frame, [0, 8], [0, 1], clamp);
+  const {fps} = useVideoConfig();
+  // hideAfter(초)를 주면 그 시간 뒤 0.5초 동안 스르륵 사라짐 (머리를 가리지 않게)
+  const o = hideAfter
+    ? interpolate(frame, [0, 8, hideAfter * fps, (hideAfter + 0.5) * fps], [0, 1, 1, 0], clamp)
+    : interpolate(frame, [0, 8], [0, 1], clamp);
   return (
     <div style={{position: 'absolute', top, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: o}}>
       <div style={{background: BRAND.black, padding: '18px 36px 20px', textAlign: 'center', maxWidth: 960}}>

@@ -1,265 +1,266 @@
 {
   "video": "talk-03b.mp4",
   "style": "B",
-  "durationSec": 174.32,
+  "durationSec": 177.91,
   "captionWidth": 840,
   "titleBox": {
     "en": "What Makes My Classes Different",
     "ko": "제 클래스가 다른 이유",
-    "top": 400
+    "top": 400,
+    "hideAfter": 4
   },
   "captions": [
     {
       "start": 0.0,
-      "end": 2.11,
+      "end": 2.33,
       "small": "제 클래스가",
       "big": "다른 점은요",
       "en": "So, what makes my classes different?",
       "dot": false
     },
     {
-      "start": 2.16,
-      "end": 9.45,
+      "start": 2.38,
+      "end": 9.8,
       "small": "첫째, 직장 생활 경험 덕분에",
       "big": "기획·운영·마케팅이\n어렵지 않고",
       "en": "First, thanks to my corporate background, planning, running, and marketing come easily to me.",
       "dot": false
     },
     {
-      "start": 9.5,
-      "end": 17.2,
+      "start": 9.85,
+      "end": 17.36,
       "small": "직장에서 알게 된 분들을 통해",
       "big": "자연스럽게 연결이 돼요",
       "en": "And the people I met through work naturally connect me to new opportunities."
     },
     {
-      "start": 17.25,
-      "end": 19.81,
+      "start": 17.41,
+      "end": 20.24,
       "small": "둘째,",
       "big": "수업을 영어로 해요",
       "en": "Second, I teach in English."
     },
     {
-      "start": 19.86,
-      "end": 28.59,
+      "start": 20.29,
+      "end": 29.12,
       "small": "영어 키즈 바레를 원하거나",
       "big": "영어로 소통하고 싶은 분\n누구나 환영해요",
       "en": "Whether you want English kids' barre or just want to practice your English, you're welcome."
     },
     {
-      "start": 28.64,
-      "end": 34.91,
+      "start": 29.17,
+      "end": 35.31,
       "small": "영어라는 언어 덕분에",
       "big": "여러 기회가\n생기는 것 같아요",
       "en": "Teaching in English has opened up all kinds of opportunities."
     },
     {
-      "start": 34.96,
-      "end": 38.72,
+      "start": 35.36,
+      "end": 39.26,
       "small": "셋째,",
       "big": "바레만 하지 않아요",
       "en": "Third, it's not just barre."
     },
     {
-      "start": 38.77,
-      "end": 43.08,
+      "start": 39.31,
+      "end": 43.53,
       "small": "10년 동안 운동을 해왔듯이",
       "big": "10년 동안 글을 썼고",
       "en": "I've been working out for ten years, and writing for ten years too.",
       "dot": false
     },
     {
-      "start": 43.13,
-      "end": 49.36,
+      "start": 43.58,
+      "end": 49.97,
       "small": "회사를 다니며 다양한 경험을 하다 보니",
       "big": "콘텐츠가 정말 많아요",
       "en": "Plus, my years at companies gave me so many experiences that I have plenty of content."
     },
     {
-      "start": 49.41,
-      "end": 54.27,
+      "start": 50.02,
+      "end": 55.01,
       "small": "그 콘텐츠를 하나씩 개발해",
       "big": "바레와 엮은 프로그램을\n만들고 있어요",
       "en": "I'm turning that content, piece by piece, into programs built around barre."
     },
     {
-      "start": 54.32,
-      "end": 57.27,
+      "start": 55.06,
+      "end": 57.82,
       "small": "언제든",
       "big": "협업할 대표님들 환영해요",
       "en": "Founders, I'm always open to collaborating!"
     },
     {
-      "start": 57.32,
-      "end": 62.41,
+      "start": 57.87,
+      "end": 63.7,
       "small": "이렇게 기회를 만들다가",
       "big": "문득 이런 생각이 들었어요",
       "en": "While creating all these opportunities, a thought suddenly hit me:",
       "dot": false
     },
     {
-      "start": 62.46,
-      "end": 66.43,
+      "start": 63.75,
+      "end": 68.54,
       "big": "\"내가 멈추면\n돈이 안 벌리겠다\"",
       "en": "\"If I stop, the money stops.\"",
       "dot": false
     },
     {
-      "start": 66.48,
-      "end": 72.89,
+      "start": 68.59,
+      "end": 75.11,
       "small": "그래서 일하지 않고도",
       "big": "돈을 벌 수 있는 방법을\n고민하기 시작했어요",
       "en": "So I started thinking about how to earn even when I'm not working."
     },
     {
-      "start": 72.94,
-      "end": 79.31,
+      "start": 75.16,
+      "end": 81.39,
       "small": "당장은 아니지만",
       "big": "언젠가 내가 지치면\n어떡하지?",
       "en": "It's not urgent yet, but what if I burn out someday?",
       "dot": false
     },
     {
-      "start": 79.36,
-      "end": 83.66,
+      "start": 81.44,
+      "end": 85.64,
       "small": "최근에 올렸던",
       "big": "지친 웰니스 강사 영상 있죠?",
       "en": "Remember my recent video about the burned-out wellness instructor?",
       "dot": false
     },
     {
-      "start": 83.71,
-      "end": 91.31,
+      "start": 85.69,
+      "end": 93.2,
       "small": "그렇게 지쳤을 때",
       "big": "갑자기 수입이 끊기면\n어쩌나 두렵더라고요",
       "en": "If I burned out like that and my income suddenly stopped, that would be scary."
     },
     {
-      "start": 91.36,
-      "end": 97.92,
+      "start": 93.25,
+      "end": 100.08,
       "small": "지금은 제가 직접",
       "big": "프로그램을 만들어\n제안하고 있지만",
       "en": "Right now, I create and pitch every program myself,",
       "dot": false
     },
     {
-      "start": 97.97,
-      "end": 103.45,
+      "start": 100.13,
+      "end": 105.73,
       "small": "언젠가는 사업화해서",
       "big": "법인으로 더 많은 걸\n해보고 싶어요",
       "en": "but someday I want to grow it into a company and do much more."
     },
     {
-      "start": 103.5,
-      "end": 106.47,
+      "start": 105.78,
+      "end": 109.04,
       "small": "언제 타이밍이 올지 몰라도",
       "big": "지금부터 준비해야겠죠?",
       "en": "I don't know when the time will come, but I should start preparing now, right?",
       "dot": false
     },
     {
-      "start": 106.52,
-      "end": 109.27,
+      "start": 109.09,
+      "end": 111.77,
       "big": "그래서 요즘\n바쁘게 지내고 있어요",
       "en": "That's why I've been so busy lately."
     },
     {
-      "start": 109.32,
-      "end": 115.13,
+      "start": 111.82,
+      "end": 118.02,
       "small": "제 궁극적인 목표는",
       "big": "웰니스 커뮤니티를\n만드는 거예요",
       "en": "My ultimate goal, as I've said before and will keep saying, is to build a wellness community."
     },
     {
-      "start": 115.18,
-      "end": 120.89,
+      "start": 118.07,
+      "end": 123.74,
       "small": "지금 당장 모으진 않아요",
       "big": "아직은 때가\n아니라고 생각해서요",
       "en": "I'm not gathering people just yet. I don't think it's time."
     },
     {
-      "start": 120.94,
-      "end": 127.7,
+      "start": 123.79,
+      "end": 130.61,
       "small": "조금씩 포트폴리오를 쌓고",
       "big": "영역을 넓혀가면서",
       "en": "As I build my portfolio and expand into new areas,",
       "dot": false
     },
     {
-      "start": 127.75,
-      "end": 131.82,
+      "start": 130.66,
+      "end": 134.91,
       "small": "만나는 분들을 모아",
       "big": "웰니스 커뮤니티에\n초대하려고 해요",
       "en": "I plan to invite the people I meet into a wellness community."
     },
     {
-      "start": 131.87,
-      "end": 134.19,
+      "start": 134.96,
+      "end": 137.59,
       "big": "당신을 초대합니다,\n웰니스 커뮤니티",
       "en": "You're invited: the Wellness Community."
     },
     {
-      "start": 134.24,
-      "end": 139.11,
+      "start": 137.64,
+      "end": 142.41,
       "small": "어떤 이야기를 나눌지",
       "big": "커뮤니티의 시스템과\n설계를 하고 있어요",
       "en": "I'm designing how the community will work and what we'll talk about,",
       "dot": false
     },
     {
-      "start": 139.16,
-      "end": 145.11,
+      "start": 142.46,
+      "end": 148.26,
       "small": "조금 더 구체화되면",
       "big": "그때 공유해드릴게요",
       "en": "and I'll share more once it takes shape."
     },
     {
-      "start": 145.16,
-      "end": 148.93,
+      "start": 148.31,
+      "end": 152.01,
       "small": "웰니스 커뮤니티에 초대할 여러분,",
       "big": "언제든 와주세요",
       "en": "To everyone I'll be inviting: you're welcome anytime!"
     },
     {
-      "start": 148.98,
-      "end": 152.99,
+      "start": 152.06,
+      "end": 156.2,
       "small": "지금까지",
       "big": "소밍의 요즘을 공유했어요",
       "en": "That's a look at my life these days."
     },
     {
-      "start": 153.04,
-      "end": 159.63,
+      "start": 156.25,
+      "end": 163.01,
       "small": "앞으로 여러 번 제안하고",
       "big": "실패하는 이야기까지",
       "en": "From here on, I'll share my many pitches, including the ones that fail,",
       "dot": false
     },
     {
-      "start": 159.68,
-      "end": 165.45,
+      "start": 163.06,
+      "end": 168.98,
       "small": "제가 어떻게 기세와 에너지로",
       "big": "만들어가는지 보여드릴게요",
       "en": "and show you how I keep building with grit and energy."
     },
     {
-      "start": 165.5,
-      "end": 168.64,
+      "start": 169.03,
+      "end": 172.35,
       "small": "소밍랩,",
       "big": "지치지 않고 나아갈게요\n화이팅!",
       "en": "Soaming Lab will keep going without burning out. Let's go!",
       "dot": false
     },
     {
-      "start": 168.69,
-      "end": 171.81,
+      "start": 172.4,
+      "end": 175.46,
       "small": "웰니스 커뮤니티를 향해",
       "big": "응원해주시면 감사하겠습니다",
       "en": "Please cheer me on as I build toward a wellness community."
     },
     {
-      "start": 171.86,
-      "end": 174.22,
+      "start": 175.51,
+      "end": 177.81,
       "big": "바이바이!",
       "en": "Bye-bye!",
       "dot": false
