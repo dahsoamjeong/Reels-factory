@@ -1,7 +1,7 @@
 {
   "video": "talk-03a.mp4",
   "style": "B",
-  "durationSec": 141.1,
+  "durationSec": 135.78,
   "captionWidth": 840,
   "titleBox": {
     "en": "How One Pitch Became a Class",
@@ -24,255 +24,249 @@
     },
     {
       "start": 3.62,
-      "end": 8.03,
+      "end": 7.69,
       "small": "오늘은 어떤 콘텐츠를",
       "big": "해보면 좋을까 고민하다가",
       "en": "I was trying to figure out what to make today.",
       "dot": false
     },
     {
-      "start": 8.08,
-      "end": 12.83,
-      "small": "지금 기획 워크숍을 하러",
-      "big": "새로운 공간에 왔거든요",
-      "en": "I'm at a new space right now for a planning workshop."
-    },
-    {
-      "start": 12.88,
-      "end": 16.11,
+      "start": 7.74,
+      "end": 10.97,
       "small": "여기 오기 전에",
       "big": "'놀이터'라는 모임에서",
       "en": "Before coming here, at a meetup called \"Playground,\"",
       "dot": false
     },
     {
-      "start": 16.16,
-      "end": 20.03,
+      "start": 11.02,
+      "end": 14.89,
       "small": "\"무슨 콘텐츠를 해야 할지 모르겠다\"고",
       "big": "이야기를 꺼냈더니",
       "en": "I said I had no idea what to post,",
       "dot": false
     },
     {
-      "start": 20.08,
-      "end": 25.43,
+      "start": 14.94,
+      "end": 20.29,
       "small": "다솜이 어떻게 제안하고 만들어가는지",
       "big": "그 이야기를\n풀어보면 좋겠다고",
       "en": "and someone said, \"Why not share how you pitch and build things?\"",
       "dot": false
     },
     {
-      "start": 25.48,
-      "end": 29.67,
+      "start": 20.34,
+      "end": 24.53,
       "small": "그 아이디어 덕분에",
       "big": "지난번 클래스를\n어떻게 열었는지",
       "en": "So thanks to that idea, here's how I opened my last class:",
       "dot": false
     },
     {
-      "start": 29.72,
-      "end": 32.57,
+      "start": 24.58,
+      "end": 27.43,
       "big": "그 비하인드 스토리를\n들려드릴게요",
       "en": "the story behind it."
     },
     {
-      "start": 32.62,
-      "end": 36.58,
+      "start": 27.48,
+      "end": 31.44,
       "small": "바야흐로 한 달 전쯤?",
       "big": "벌써 그렇게 됐네요",
       "en": "It was about a month ago. Time flies!"
     },
     {
-      "start": 36.63,
-      "end": 39.2,
+      "start": 31.49,
+      "end": 34.06,
       "big": "'무브콘'이라는 행사에",
       "en": "At an event called MoveCon,",
       "dot": false
     },
     {
-      "start": 39.25,
-      "end": 43.36,
+      "start": 34.11,
+      "end": 38.22,
       "small": "바레 강사님이 강의하신다길래",
       "big": "그 강의를 들으러 갔어요",
       "en": "a barre instructor was giving a talk, so I went to listen."
     },
     {
-      "start": 43.41,
-      "end": 48.28,
+      "start": 38.27,
+      "end": 43.14,
       "small": "끝나고 어떤 분이 붙잡으시더니",
       "big": "\"저랑 커피챗 하실래요?\"",
       "en": "After the session, someone stopped me and asked, \"Want to grab a coffee chat?\"",
       "dot": false
     },
     {
-      "start": 48.33,
-      "end": 52.82,
+      "start": 43.19,
+      "end": 47.68,
       "small": "그분이 판교의 한 요가원에",
       "big": "5년 정도 다니셨는데",
       "en": "They'd been going to a yoga studio in Pangyo for about five years,",
       "dot": false
     },
     {
-      "start": 52.87,
-      "end": 55.52,
+      "start": 47.73,
+      "end": 50.38,
       "small": "거기서 바레 수업을",
       "big": "해주면 좋겠다고 하셨어요",
       "en": "and asked if I'd teach a barre class there."
     },
     {
-      "start": 55.57,
-      "end": 60.66,
+      "start": 50.43,
+      "end": 55.52,
       "small": "듣자마자 냅다",
       "big": "\"그럼 그 요가원에\n연락해볼까?\"",
       "en": "The moment I heard it, I thought, \"Why not just reach out to the studio?\"",
       "dot": false
     },
     {
-      "start": 60.71,
-      "end": 62.72,
+      "start": 55.57,
+      "end": 57.58,
       "small": "왜냐하면 제가",
       "big": "판교 근처에 살거든요",
       "en": "I live near Pangyo, you see."
     },
     {
-      "start": 62.77,
-      "end": 67.0,
+      "start": 57.63,
+      "end": 61.86,
       "small": "가깝고 좋으니까 찾아보다가",
       "big": "대표님께 DM을 보냈어요",
       "en": "It's close and I love the area, so I looked it up and DMed the owner."
     },
     {
-      "start": 67.05,
-      "end": 70.8,
+      "start": 61.91,
+      "end": 65.66,
       "small": "\"저는 이런 사람이고,",
       "big": "같이 클래스를\n만들어보고 싶어요\"",
       "en": "\"Here's who I am, and I'd love to create a class together.\"",
       "dot": false
     },
     {
-      "start": 70.85,
-      "end": 74.18,
+      "start": 65.71,
+      "end": 69.04,
       "small": "그렇게 제안을 드리고",
       "big": "만나서 이야기를 나누며",
       "en": "After that pitch, we met and talked it through.",
       "dot": false
     },
     {
-      "start": 74.23,
-      "end": 77.78,
+      "start": 69.09,
+      "end": 72.64,
       "small": "그때 준비했던",
       "big": "'움직임으로 나를 만나는'",
       "en": "I took what I'd been preparing, \"Meeting Yourself Through Movement,\"",
       "dot": false
     },
     {
-      "start": 77.83,
-      "end": 82.06,
+      "start": 72.69,
+      "end": 76.92,
       "small": "감정 알기 워크숍과",
       "big": "바레 움직임 워크숍으로",
       "en": "an emotion-awareness workshop and a barre movement workshop,",
       "dot": false
     },
     {
-      "start": 82.11,
-      "end": 86.9,
+      "start": 76.97,
+      "end": 81.76,
       "small": "몸도 알고 마음도 알아가는",
       "big": "클래스를 기획했어요",
       "en": "and designed a class that helps people understand both body and mind."
     },
     {
-      "start": 86.95,
-      "end": 90.86,
+      "start": 81.81,
+      "end": 85.72,
       "small": "그렇게",
       "big": "그 프로그램을 진행하게 됐고요",
       "en": "And that's how the program came to life."
     },
     {
-      "start": 90.91,
-      "end": 96.96,
+      "start": 85.77,
+      "end": 91.82,
       "small": "그러다 우연히",
       "big": "한화손보 웰니스\n행사에 갔다가",
       "en": "Then I happened to go to a wellness event by Hanwha General Insurance",
       "dot": false
     },
     {
-      "start": 97.01,
-      "end": 98.8,
+      "start": 91.87,
+      "end": 93.66,
       "big": "에가톳 대표님을 만났어요",
       "en": "and met the founder of Egattoc."
     },
     {
-      "start": 98.85,
-      "end": 103.88,
+      "start": 93.71,
+      "end": 98.74,
       "small": "\"대표님, 안녕하세요!\" 하며",
       "big": "저를 소개하고 인사드렸더니",
       "en": "I went up, said hello, and introduced myself,",
       "dot": false
     },
     {
-      "start": 103.93,
-      "end": 107.9,
+      "start": 98.79,
+      "end": 102.76,
       "small": "에가톳에서 수업을",
       "big": "해주면 좋겠다고 하셔서",
       "en": "and they asked me to teach a class at Egattoc."
     },
     {
-      "start": 107.95,
-      "end": 111.68,
+      "start": 102.81,
+      "end": 106.54,
       "small": "12월 5일,",
       "big": "에가톳에서 수업을 해요",
       "en": "So on December 5th, I'm teaching at Egattoc!"
     },
     {
-      "start": 111.73,
-      "end": 117.81,
+      "start": 106.59,
+      "end": 112.67,
       "small": "그리고 웰니스 브랜드를 위해",
       "big": "소밍랩을 만들고 나니",
       "en": "Ever since I started Soaming Lab to build a wellness brand,",
       "dot": false
     },
     {
-      "start": 117.86,
-      "end": 122.03,
+      "start": 112.72,
+      "end": 116.89,
       "small": "여기저기서",
       "big": "중학교 동창이\n연락을 주기도 하고",
       "en": "people have reached out from all over, like an old middle school friend,",
       "dot": false
     },
     {
-      "start": 122.08,
-      "end": 125.91,
+      "start": 116.94,
+      "end": 120.77,
       "small": "티 브랜드 대표님을 통해",
       "big": "협업 제안이 오기도 하고",
       "en": "a collaboration offer through a tea brand founder,",
       "dot": false
     },
     {
-      "start": 125.96,
-      "end": 129.97,
+      "start": 120.82,
+      "end": 124.83,
       "small": "또 어떤 곳에서는",
       "big": "키즈·시니어 대상\n바레 수업을 열어달라고",
       "en": "and some even asked me to start barre classes for kids and seniors.",
       "dot": false
     },
     {
-      "start": 130.02,
-      "end": 133.77,
+      "start": 124.88,
+      "end": 128.63,
       "big": "먼저 제안 주신\n대표님들도 계세요",
       "en": "They came to me first."
     },
     {
-      "start": 133.82,
-      "end": 136.17,
+      "start": 128.68,
+      "end": 131.03,
       "big": "이런 제안들이\n너무 신기해요",
       "en": "It still amazes me."
     },
     {
-      "start": 136.22,
-      "end": 141.0,
+      "start": 131.08,
+      "end": 135.68,
       "small": "그리고 12월에는",
       "big": "초등학교 선생님들께\n바레 수업을 해요",
       "en": "And in December, I'm teaching barre to elementary school teachers."
     }
-  ]
+  ],
+  "pops": []
 }
