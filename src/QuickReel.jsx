@@ -11,7 +11,7 @@ import {BRAND, fontCss, Dot, TitleBox} from './Reel';
 //  3) outro: 마지막 몇 초에 한 줄 마무리 문구
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 
-const Bubble = ({text, big, side, delay}) => {
+const Bubble = ({text, big, side, delay, size}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const s = spring({frame: frame - delay, fps, config: {damping: 14, stiffness: 170}});
@@ -22,7 +22,7 @@ const Bubble = ({text, big, side, delay}) => {
       <div style={{position: 'relative', maxWidth: big ? 820 : 720, background: BRAND.white, color: BRAND.black,
         borderRadius: 40, padding: big ? '30px 40px 32px' : '24px 34px 26px',
         boxShadow: '0 10px 40px rgba(0,0,0,.35)',
-        fontFamily: 'Pretendard', fontWeight: big ? 900 : 700, fontSize: big ? 54 : 42, lineHeight: 1.3,
+        fontFamily: 'Pretendard', fontWeight: big ? 900 : 700, fontSize: size || (big ? 54 : 42), lineHeight: 1.3,
         letterSpacing: '-0.03em', whiteSpace: 'pre-line', wordBreak: 'keep-all'}}>
         {text}{big ? <Dot /> : null}
         <div style={{position: 'absolute', bottom: -14, [left ? 'left' : 'right']: 46, width: 34, height: 34,
@@ -32,7 +32,7 @@ const Bubble = ({text, big, side, delay}) => {
   );
 };
 
-const Intro = ({bg, comments, durationInFrames}) => {
+const Intro = ({bg, comments, durationInFrames, top = 760, gap = 44}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const out = interpolate(frame, [durationInFrames - 8, durationInFrames], [1, 0], clamp);
@@ -40,10 +40,10 @@ const Intro = ({bg, comments, durationInFrames}) => {
     <AbsoluteFill style={{opacity: out}}>
       <Img src={staticFile(bg)} style={{width: '100%', height: '100%', objectFit: 'cover',
         filter: 'blur(22px) brightness(0.5)', transform: 'scale(1.12)'}} />
-      <div style={{position: 'absolute', left: 80, right: 160, top: 760, display: 'flex', flexDirection: 'column', gap: 44}}>
+      <div style={{position: 'absolute', left: 80, right: 160, top, display: 'flex', flexDirection: 'column', gap}}>
         {comments.map((c, i) => (
           <Bubble key={i} text={c.text} big={c.big} side={c.side || (i % 2 ? 'right' : 'left')}
-            delay={Math.round((0.3 + i * 0.9) * fps)} />
+            delay={Math.round((c.at ?? (0.3 + i * 0.9)) * fps)} size={c.size} />
         ))}
       </div>
     </AbsoluteFill>
@@ -74,7 +74,7 @@ const Outro = ({text, durationInFrames}) => {
   );
 };
 
-export const QuickReel = ({video, bg, introSec = 4.5, videoSec, outroSec = 2.4, titleBox, comments = [], speedLabel, outro}) => {
+export const QuickReel = ({video, bg, introSec = 4.5, videoSec, outroSec = 2.4, titleBox, comments = [], speedLabel, outro, introTop, introGap}) => {
   const {fps} = useVideoConfig();
   const f = (x) => Math.round(x * fps);
   const total = introSec + videoSec;
@@ -86,7 +86,7 @@ export const QuickReel = ({video, bg, introSec = 4.5, videoSec, outroSec = 2.4, 
         {speedLabel && <Sequence durationInFrames={f(videoSec - outroSec)} layout="none"><SpeedBadge label={speedLabel} /></Sequence>}
       </Sequence>
       <Sequence durationInFrames={f(introSec)} layout="none">
-        <Intro bg={bg} comments={comments} durationInFrames={f(introSec)} />
+        <Intro bg={bg} comments={comments} durationInFrames={f(introSec)} top={introTop} gap={introGap} />
       </Sequence>
       {outro && (
         <Sequence from={f(total - outroSec)} layout="none">
