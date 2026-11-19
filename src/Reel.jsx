@@ -65,7 +65,7 @@ const ACCENT = {
 };
 const accent = (font) => ACCENT[font] || {};
 
-const fontCss = `
+export const fontCss = `
 @font-face{font-family:Pretendard;font-weight:500;src:url(${staticFile('fonts/Pretendard-Medium.woff2')})}
 @font-face{font-family:Pretendard;font-weight:700;src:url(${staticFile('fonts/Pretendard-Bold.woff2')})}
 @font-face{font-family:Pretendard;font-weight:800 900;src:url(${staticFile('fonts/Pretendard-Black.woff2')})}
@@ -81,7 +81,7 @@ const WithDot = ({text}) => {
   return <>{i >= 0 ? text.slice(0, i + 1) : ''}<span style={{whiteSpace: 'nowrap'}}>{text.slice(i + 1)}<Dot /></span></>;
 };
 
-const Dot = () => (
+export const Dot = () => (
   <span style={{
     display: 'inline-block', width: '0.22em', height: '0.22em', borderRadius: '50%',
     background: BRAND.red, marginLeft: '0.06em',
@@ -139,7 +139,7 @@ const SeriesTag = ({title, episode, episodeTitle, styleName, st}) => {
 };
 
 // 제목 박스 (말하는 영상용): 맨 위 검은 박스 안에 영어 제목 + 한국어 제목
-const TitleBox = ({en, ko, top = 290, hideAfter}) => {
+export const TitleBox = ({en, ko, top = 290, hideAfter}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   // hideAfter(초)를 주면 그 시간 뒤 0.5초 동안 스르륵 사라짐 (머리를 가리지 않게)
