@@ -82,6 +82,15 @@ ffmpeg -ss 시작 -t 길이 -i 원본.mp4 -vf "scale=1080:1920,setsar=1,setpts=1
    - 전신이 다 보이게 작게 넣고 싶으면 `scale`(예: 0.9)과 가운데 기준 `centerX`(사진 픽셀)를 넣어요
 3. 렌더링: `npx remotion still src/index.jsx Cover out/cover-epN.png --props=covers/epN.json`
 
+## 목록 릴스 만들기 (예: "대표가 되어 깨달은 것" 1~10)
+
+영상 위에 검은 제목 박스 + 반투명 판에 번호 목록이 영상 내내 떠 있는 형식이에요.
+
+1. 영상을 `public/list-NN.mp4`로 넣어요
+2. `episodes/list-01.json`을 복사해서 `title`(줄바꿈은 `\n`), `items`(항목마다 한 줄, 넘치면 자동 줄바꿈)를 바꿔요
+   - 얼굴이 제목에 가리면 `videoShiftY`(영상을 위로 올리기)와 `top`(제목 위치)을 조절해요
+3. 렌더링: `npx remotion render src/index.jsx ListReel out/list-NN.mp4 --props=episodes/list-NN.json`
+
 ## 클라우드 세션 참고
 
 - 렌더링용 브라우저는 `remotion.config.js`에서 환경에 미리 깔린 Chromium을 쓰도록 지정돼 있어요. 다른 컴퓨터에서는 이 줄을 지워도 돼요.

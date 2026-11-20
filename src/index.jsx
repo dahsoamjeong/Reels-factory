@@ -4,6 +4,7 @@ import {Reel} from './Reel';
 import {Cover} from './Cover';
 import {Narration} from './Narration';
 import {TalkCover} from './TalkCover';
+import {ListReel} from './ListReel';
 import sample from '../episodes/sample.json';
 
 const Root = () => (
@@ -15,6 +16,10 @@ const Root = () => (
   />
   <Composition id="Narration" component={Narration} fps={30} width={1080} height={1920}
     durationInFrames={300} defaultProps={{audio: 'narration.wav', durationSec: 10, seriesTitle: 'Move to Find Yourself', scenes: [], subtitles: []}}
+    calculateMetadata={({props}) => ({durationInFrames: Math.round(props.durationSec * 30)})}
+  />
+  <Composition id="ListReel" component={ListReel} fps={30} width={1080} height={1920}
+    durationInFrames={150} defaultProps={{video: 'list-01.mp4', durationSec: 5, title: '제목', items: []}}
     calculateMetadata={({props}) => ({durationInFrames: Math.round(props.durationSec * 30)})}
   />
   <Still id="Cover" component={Cover} width={1080} height={1920}
