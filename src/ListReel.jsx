@@ -19,6 +19,8 @@ export const ListReel = ({
   panelOpacity = 0.55, itemGap = 6, lineHeight = 1.36,
   textRight = 150,      // 오른쪽 여백: Instagram 좋아요·댓글 버튼과 겹치지 않게
   muted = false,
+  numbered = true,      // false면 번호 없이 문단 글. 빈 줄("")은 문단 사이 간격
+  paraGap = 24,
 }) => (
   <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif'}}>
     <style>{fontCss}</style>
@@ -42,9 +44,9 @@ export const ListReel = ({
       </div>
       <div style={{margin: '0 12px', background: `rgba(40,40,40,${panelOpacity})`, padding: `26px ${textRight}px 30px 36px`,
         color: '#fff', fontWeight: 500, fontSize: itemSize, lineHeight, letterSpacing: '-0.02em'}}>
-        {items.map((it, i) => (
+        {items.map((it, i) => it === '' ? <div key={i} style={{height: paraGap}} /> : (
           <div key={i} style={{display: 'flex', marginTop: i ? itemGap : 0}}>
-            <div style={{width: '1.55em', flexShrink: 0}}>{i + 1}.</div>
+            {numbered && <div style={{width: '1.55em', flexShrink: 0}}>{items.slice(0, i + 1).filter((x) => x !== '').length}.</div>}
             {/* 한 줄에 안 들어가면 단어 단위로 자동 줄바꿈. \n으로 직접 나눌 수도 있어요 */}
             <div style={{wordBreak: 'keep-all'}}>{it.split('\n').map((l, j) => <div key={j}>{l}</div>)}</div>
           </div>
