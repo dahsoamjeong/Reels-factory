@@ -1,5 +1,8 @@
 import React from 'react';
 import {AbsoluteFill, OffthreadVideo, staticFile} from 'remotion';
+import '@fontsource/noto-sans-kr/300.css';
+import '@fontsource/noto-sans-kr/400.css';
+import '@fontsource/noto-sans-kr/700.css';
 
 // 목록 릴스: 영상 위에 검은 제목 박스 + 반투명 판에 번호 목록
 // (예: "대표가 되어 깨달은 것" 1~10). 화면 내내 그대로 떠 있어서
@@ -19,10 +22,13 @@ export const ListReel = ({
   panelOpacity = 0.55, itemGap = 6, lineHeight = 1.36,
   textRight = 150,      // 오른쪽 여백: Instagram 좋아요·댓글 버튼과 겹치지 않게
   muted = false,
+  font = 'noto',        // 'noto': 인스타 Edits 글씨와 비슷한 Noto Sans KR / 'pretendard'
   sideMargin = 70,      // 양옆 여백: 휴대폰에 따라 인스타가 영상 양옆을 잘라 보여줘서
   padLeft = 40,
-}) => (
-  <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif'}}>
+}) => {
+  const noto = font === 'noto';
+  return (
+  <AbsoluteFill style={{background: '#000', fontFamily: noto ? '"Noto Sans KR", sans-serif' : 'Pretendard, sans-serif'}}>
     <style>{fontCss}</style>
     {/* 영상을 위로 올리면 아래가 비므로, 같은 영상을 크게 흐리게 깔아 채움 */}
     {videoShiftY > 0 && (
@@ -39,11 +45,11 @@ export const ListReel = ({
           maskImage: `linear-gradient(to top, transparent 0, #000 220px)`} : {})}} />
     <div style={{position: 'absolute', top, left: 0, right: 0}}>
       <div style={{display: 'inline-block', marginLeft: sideMargin, background: '#0A0A0A', color: '#fff',
-        padding: '18px 30px 20px', fontWeight: 900, fontSize: titleSize, lineHeight: 1.25, letterSpacing: '-0.04em'}}>
+        padding: '18px 30px 20px', fontWeight: noto ? 700 : 900, fontSize: titleSize, lineHeight: 1.25, letterSpacing: noto ? '-0.01em' : '-0.04em'}}>
         {title.split('\n').map((l, i) => <div key={i} style={{whiteSpace: 'nowrap'}}>{l}</div>)}
       </div>
       <div style={{margin: `0 ${sideMargin}px`, background: `rgba(40,40,40,${panelOpacity})`, padding: `26px ${textRight}px 30px ${padLeft}px`,
-        color: '#fff', fontWeight: 500, fontSize: itemSize, lineHeight, letterSpacing: '-0.02em'}}>
+        color: '#fff', fontWeight: noto ? 300 : 500, fontSize: itemSize, lineHeight, letterSpacing: noto ? '-0.02em' : '-0.02em'}}>
         {items.map((it, i) => (
           <div key={i} style={{display: 'flex', marginTop: i ? itemGap : 0}}>
             <div style={{width: '1.55em', flexShrink: 0}}>{i + 1}.</div>
@@ -55,3 +61,4 @@ export const ListReel = ({
     </div>
   </AbsoluteFill>
 );
+};
