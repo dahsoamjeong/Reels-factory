@@ -22,5 +22,6 @@
   ],
   "itemGap": 6,
   "lineHeight": 1.33,
-  "videoScale": 1
+  "videoScale": 1,
+  "font": "pretendard"
 }
