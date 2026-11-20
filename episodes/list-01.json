@@ -2,11 +2,10 @@
   "video": "list-01.mp4",
   "durationSec": 4.85,
   "title": "올해 상반기까지 직장인이던 내가\n대표가 되어 깨달은 것",
-  "top": 790,
-  "videoShiftY": 330,
-  "fillBottom": "#0b0b0b",
-  "titleSize": 52,
-  "itemSize": 31,
+  "top": 925,
+  "videoShiftY": 0,
+  "titleSize": 48,
+  "itemSize": 29,
   "panelOpacity": 0.55,
   "textRight": 40,
   "items": [
@@ -22,5 +21,6 @@
     "그래도 꿈꾸는 대로, 내가 원하는 대로 도전해볼 수 있음\n내 사업이고 내 문제에서 시작하니 즐거움"
   ],
   "itemGap": 6,
-  "lineHeight": 1.42
+  "lineHeight": 1.42,
+  "videoScale": 1.2
 }

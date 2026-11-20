@@ -13,7 +13,8 @@ const fontCss = `
 export const ListReel = ({
   video, title, items = [],
   top = 700,            // 제목 박스 위쪽 위치(px)
-  videoShiftY = 0,      // 영상을 위로 올릴 만큼(px). 얼굴이 목록에 가리지 않게
+  videoShiftY = 0,      // 영상을 위로 올릴 만큼(px). 아래가 비므로 가급적 videoScale을 쓰기
+  videoScale = 1,       // 아래쪽 기준 확대. 화면을 꽉 채운 채 얼굴만 위로 올라감
   fillBottom = '#000',  // 영상을 올려서 아래 비는 곳 색
   titleSize = 56, itemSize = 34,
   panelOpacity = 0.55, itemGap = 6, lineHeight = 1.36,
@@ -24,7 +25,8 @@ export const ListReel = ({
     <style>{fontCss}</style>
     <OffthreadVideo src={staticFile(video)} muted={muted}
       style={{width: '100%', height: '100%', objectFit: 'cover',
-        transform: videoShiftY ? `translateY(${-videoShiftY}px)` : undefined}} />
+        transformOrigin: '50% 100%',
+        transform: `translateY(${-videoShiftY}px) scale(${videoScale})`}} />
     {videoShiftY > 0 && (
       <AbsoluteFill style={{background: `linear-gradient(to top, ${fillBottom} 0, ${fillBottom} ${videoShiftY}px, transparent ${videoShiftY + 160}px)`}} />
     )}
