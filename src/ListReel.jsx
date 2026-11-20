@@ -15,21 +15,26 @@ export const ListReel = ({
   top = 700,            // 제목 박스 위쪽 위치(px)
   videoShiftY = 0,      // 영상을 위로 올릴 만큼(px). 아래가 비므로 가급적 videoScale을 쓰기
   videoScale = 1,       // 아래쪽 기준 확대. 화면을 꽉 채운 채 얼굴만 위로 올라감
-  fillBottom = '#000',  // 영상을 올려서 아래 비는 곳 색
   titleSize = 56, itemSize = 34,
   panelOpacity = 0.55, itemGap = 6, lineHeight = 1.36,
   textRight = 150,      // 오른쪽 여백: Instagram 좋아요·댓글 버튼과 겹치지 않게
   muted = false,
 }) => (
-  <AbsoluteFill style={{background: fillBottom, fontFamily: 'Pretendard, sans-serif'}}>
+  <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif'}}>
     <style>{fontCss}</style>
-    <OffthreadVideo src={staticFile(video)} muted={muted}
-      style={{width: '100%', height: '100%', objectFit: 'cover',
-        transformOrigin: '50% 100%',
-        transform: `translateY(${-videoShiftY}px) scale(${videoScale})`}} />
+    {/* 영상을 위로 올리면 아래가 비므로, 같은 영상을 크게 흐리게 깔아 채움 */}
     {videoShiftY > 0 && (
-      <AbsoluteFill style={{background: `linear-gradient(to top, ${fillBottom} 0, ${fillBottom} ${videoShiftY}px, transparent ${videoShiftY + 160}px)`}} />
+      <OffthreadVideo src={staticFile(video)} muted
+        style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover',
+          transformOrigin: '50% 100%', transform: 'scale(1.35)', filter: 'blur(28px) brightness(0.8)'}} />
     )}
+    <OffthreadVideo src={staticFile(video)} muted={muted}
+      style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover',
+        transformOrigin: '50% 100%',
+        transform: `translateY(${-videoShiftY}px) scale(${videoScale})`,
+        ...(videoShiftY > 0 ? {
+          WebkitMaskImage: `linear-gradient(to top, transparent 0, #000 220px)`,
+          maskImage: `linear-gradient(to top, transparent 0, #000 220px)`} : {})}} />
     <div style={{position: 'absolute', top, left: 0, right: 0}}>
       <div style={{display: 'inline-block', marginLeft: 12, background: '#0A0A0A', color: '#fff',
         padding: '18px 30px 20px', fontWeight: 900, fontSize: titleSize, lineHeight: 1.25, letterSpacing: '-0.04em'}}>
