@@ -1,0 +1,74 @@
+{
+  "video": "reel-ep4.mp4",
+  "style": "B",
+  "durationSec": 22.1,
+  "seriesTitle": "Move to Find Yourself",
+  "episode": 4,
+  "episodeTitle": "호기심",
+  "captions": [
+    {
+      "start": 0.3,
+      "end": 3.13,
+      "small": "질문하고 싶어서",
+      "big": "학창시절 내내 반장",
+      "en": "I was class president all through school, just so I could ask questions."
+    },
+    {
+      "start": 3.23,
+      "end": 6.24,
+      "small": "무대에 서고 싶어서",
+      "big": "매년 선글라스 끼고 장기자랑",
+      "en": "I wanted the stage, so every year I danced at the talent show in sunglasses."
+    },
+    {
+      "start": 6.34,
+      "end": 9.45,
+      "small": "미국에서는 질문을 너무 많이 해",
+      "big": "하루 두 번으로 제한당했어요",
+      "en": "In the U.S., I asked so many questions I got limited to two a day."
+    },
+    {
+      "start": 9.55,
+      "end": 12.47,
+      "small": "1년 동안 매일 교실을 돌며",
+      "big": "선생님들을 귀찮게 했더니",
+      "en": "For a year, I went to every classroom and pestered my teachers,",
+      "dot": false
+    },
+    {
+      "start": 12.57,
+      "end": 14.73,
+      "small": "그 덕분에",
+      "big": "전교 2등",
+      "en": "and that's how I ranked 2nd in my school."
+    },
+    {
+      "start": 14.83,
+      "end": 18.51,
+      "small": "학부 시절, 강의가 끝나면 무조건 질문",
+      "big": "그렇게 프로젝트를\n다 따왔어요",
+      "en": "In college, I asked a question after every lecture, and that's how I landed every project."
+    },
+    {
+      "start": 18.61,
+      "end": 22.1,
+      "small": "첫 직장 창립 멤버로 대표님들을 인터뷰하며",
+      "big": "질문하는 게 일이 됐어요",
+      "en": "As a founding member at my first job, I interviewed CEOs. Asking questions became my job."
+    }
+  ],
+  "pops": [
+    {
+      "start": 0.3,
+      "end": 2.4,
+      "text": "호기심",
+      "font": "myeongjo"
+    },
+    {
+      "start": 18.71,
+      "end": 22.1,
+      "text": "호기심",
+      "font": "myeongjo"
+    }
+  ]
+}
