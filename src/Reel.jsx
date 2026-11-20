@@ -75,10 +75,21 @@ export const fontCss = `
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 
 // 마지막 단어와 빨간 점이 줄바꿈으로 떨어지지 않게 묶음
+// {{단어}} 로 감싼 부분은 빨간색으로 강조
+const parseHL = (text) => text.split(/(\{\{[^}]*\}\})/).filter(Boolean)
+  .map((t) => t.startsWith('{{') ? {t: t.slice(2, -2), red: true} : {t, red: false});
+const Seg = ({t, red}) => red ? <span style={{color: BRAND.red}}>{t}</span> : <>{t}</>;
+export const HL = ({text}) => <>{parseHL(text).map((g, i) => <Seg key={i} {...g} />)}</>;
+
 const WithDot = ({text}) => {
-  if (/[?!…]$/.test(text)) return <>{text}</>; // 물음표·느낌표 뒤에는 점 생략
-  const i = Math.max(text.lastIndexOf(' '), text.lastIndexOf('\n')); // 직접 넣은 줄바꿈도 단어 경계로
-  return <>{i >= 0 ? text.slice(0, i + 1) : ''}<span style={{whiteSpace: 'nowrap'}}>{text.slice(i + 1)}<Dot /></span></>;
+  const segs = parseHL(text);
+  const plain = segs.map((g) => g.t).join('');
+  if (/[?!…]$/.test(plain)) return <HL text={text} />; // 물음표·느낌표 뒤에는 점 생략
+  const last = segs[segs.length - 1];
+  const i = Math.max(last.t.lastIndexOf(' '), last.t.lastIndexOf('\n')); // 직접 넣은 줄바꿈도 단어 경계로
+  return <>{segs.slice(0, -1).map((g, k) => <Seg key={k} {...g} />)}
+    {i >= 0 ? <Seg t={last.t.slice(0, i + 1)} red={last.red} /> : null}
+    <span style={{whiteSpace: 'nowrap'}}><Seg t={last.t.slice(i + 1)} red={last.red} /><Dot /></span></>;
 };
 
 export const Dot = () => (
@@ -139,7 +150,7 @@ const SeriesTag = ({title, episode, episodeTitle, styleName, st}) => {
 };
 
 // 제목 박스 (말하는 영상용): 맨 위 검은 박스 안에 영어 제목 + 한국어 제목
-export const TitleBox = ({en, ko, top = 290, hideAfter}) => {
+export const TitleBox = ({en, ko, top = 290, hideAfter, series}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   // hideAfter(초)를 주면 그 시간 뒤 0.5초 동안 스르륵 사라짐 (머리를 가리지 않게)
@@ -149,6 +160,7 @@ export const TitleBox = ({en, ko, top = 290, hideAfter}) => {
   return (
     <div style={{position: 'absolute', top, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: o}}>
       <div style={{background: BRAND.black, padding: '18px 36px 20px', textAlign: 'center', maxWidth: 960}}>
+        {series && <div style={{fontFamily: 'Pretendard', fontWeight: 700, fontSize: 28, letterSpacing: '0.01em', color: BRAND.red, marginBottom: 6}}>{series}</div>}
         {en && <div style={{fontFamily: 'Pretendard', fontWeight: 900, fontSize: Math.min(54, Math.floor(1700 / Math.max(1, en.length))), letterSpacing: '-0.02em', color: BRAND.white, lineHeight: 1.12, whiteSpace: 'nowrap'}}>{en}</div>}
         {ko && <div style={{fontFamily: 'Pretendard', fontWeight: 800, fontSize: 50, letterSpacing: '-0.03em', color: BRAND.white, lineHeight: 1.2, marginTop: 4}}>{ko}<Dot /></div>}
       </div>
@@ -159,18 +171,18 @@ export const TitleBox = ({en, ko, top = 290, hideAfter}) => {
 };
 
 // 기본 자막: 작은 줄 + 큰 줄 + 영어 번역
-const Caption = ({small, big, en, font, dot = true, durationInFrames, st, width = 900}) => {
+const Caption = ({small, big, en, font, dot = true, durationInFrames, st, width = 900, top = 1130}) => {
   const frame = useCurrentFrame();
   const enter = interpolate(frame, [0, 6], [0, 1], clamp);
   const exit = interpolate(frame, [durationInFrames - 4, durationInFrames], [1, 0], clamp);
   return (
     <div style={{
-      position: 'absolute', left: 72, top: 1130, width, color: BRAND.white,
+      position: 'absolute', left: 72, top, width, color: BRAND.white,
       textShadow: '0 2px 4px rgba(0,0,0,.5), 0 2px 16px rgba(0,0,0,.6)', wordBreak: 'keep-all', whiteSpace: 'pre-line',
       opacity: enter * exit, transform: `translateY(${interpolate(enter, [0, 1], [18, 0])}px)`,
     }}>
-      {small && <div style={{fontFamily: st.koFont, ...st.small, opacity: 0.95}}>{small}</div>}
-      <div style={{fontFamily: st.koFont, ...st.big, ...accent(font)}}>{dot ? <WithDot text={big} /> : big}</div>
+      {small && <div style={{fontFamily: st.koFont, ...st.small, opacity: 0.95}}><HL text={small} /></div>}
+      <div style={{fontFamily: st.koFont, ...st.big, ...accent(font)}}>{dot ? <WithDot text={big} /> : <HL text={big} />}</div>
       {en && <div style={{fontFamily: st.enFont, ...st.en, opacity: 0.85}}>{en}</div>}
     </div>
   );
@@ -217,7 +229,7 @@ const Scatter = ({texts, font, durationInFrames, st}) => {
   );
 };
 
-export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTitle, titleBox, captionWidth = 900, captions = [], pops = []}) => {
+export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTitle, titleBox, captionWidth = 900, captionTop, captions = [], pops = []}) => {
   const {fps} = useVideoConfig();
   const st = withFont(STYLES[style] || STYLES.A, font);
   const f = (sec) => Math.round(sec * fps);
@@ -239,7 +251,7 @@ export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTit
       })}
       {captions.map((c, i) => (
         <Sequence key={'c' + i} from={f(c.start)} durationInFrames={f(c.end - c.start)} layout="none">
-          <Caption {...c} durationInFrames={f(c.end - c.start)} st={st} width={captionWidth} />
+          <Caption {...c} durationInFrames={f(c.end - c.start)} st={st} width={captionWidth} {...(captionTop ? {top: captionTop} : {})} />
         </Sequence>
       ))}
     </AbsoluteFill>
