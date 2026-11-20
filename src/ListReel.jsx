@@ -19,6 +19,8 @@ export const ListReel = ({
   panelOpacity = 0.55, itemGap = 6, lineHeight = 1.36,
   textRight = 150,      // 오른쪽 여백: Instagram 좋아요·댓글 버튼과 겹치지 않게
   muted = false,
+  sideMargin = 70,      // 양옆 여백: 휴대폰에 따라 인스타가 영상 양옆을 잘라 보여줘서
+  padLeft = 40,
 }) => (
   <AbsoluteFill style={{background: '#000', fontFamily: 'Pretendard, sans-serif'}}>
     <style>{fontCss}</style>
@@ -36,11 +38,11 @@ export const ListReel = ({
           WebkitMaskImage: `linear-gradient(to top, transparent 0, #000 220px)`,
           maskImage: `linear-gradient(to top, transparent 0, #000 220px)`} : {})}} />
     <div style={{position: 'absolute', top, left: 0, right: 0}}>
-      <div style={{display: 'inline-block', marginLeft: 12, background: '#0A0A0A', color: '#fff',
+      <div style={{display: 'inline-block', marginLeft: sideMargin, background: '#0A0A0A', color: '#fff',
         padding: '18px 30px 20px', fontWeight: 900, fontSize: titleSize, lineHeight: 1.25, letterSpacing: '-0.04em'}}>
         {title.split('\n').map((l, i) => <div key={i} style={{whiteSpace: 'nowrap'}}>{l}</div>)}
       </div>
-      <div style={{margin: '0 12px', background: `rgba(40,40,40,${panelOpacity})`, padding: `26px ${textRight}px 30px 36px`,
+      <div style={{margin: `0 ${sideMargin}px`, background: `rgba(40,40,40,${panelOpacity})`, padding: `26px ${textRight}px 30px ${padLeft}px`,
         color: '#fff', fontWeight: 500, fontSize: itemSize, lineHeight, letterSpacing: '-0.02em'}}>
         {items.map((it, i) => (
           <div key={i} style={{display: 'flex', marginTop: i ? itemGap : 0}}>
