@@ -29,7 +29,7 @@ export const TalkCover = ({image, title, subtitle, top = 300, titleSize = 108, d
       {logoAt === 'top' && <Img src={staticFile(light ? BRAND.logoWhite : BRAND.logoBlack)} style={{height: 30, width: 'auto', marginBottom: 30, filter: light ? 'drop-shadow(0 2px 6px rgba(0,0,0,.6))' : 'none'}} />}
       <div style={{fontFamily: family, fontWeight: serif ? serifWeight : 900, fontSize: titleSize, lineHeight: serif ? 1.2 : 1.16,
         letterSpacing: serif ? '-0.03em' : '-0.045em', textShadow: shadow}}>
-        {lines.map((l, i) => <div key={i} style={{whiteSpace: 'nowrap'}}>{l}{i === lines.length - 1 ? <Dot /> : null}</div>)}
+        {lines.map((l, i) => <div key={i} style={{whiteSpace: 'nowrap'}}>{l}{i === lines.length - 1 && !/[?!]$/.test(l) ? <Dot /> : null}</div>)}
       </div>
       {subtitle && <div style={{marginTop: 24, fontFamily: 'Pretendard', fontWeight: 800, fontSize: Math.min(42, Math.floor(1900 / Math.max(1, subtitle.length))),
         letterSpacing: '-0.01em', color: light ? '#f4f4f4' : '#2a2a2a', whiteSpace: 'nowrap', textShadow: shadow}}>{subtitle}</div>}
