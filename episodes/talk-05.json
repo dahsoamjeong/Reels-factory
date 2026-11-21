@@ -1,0 +1,92 @@
+{
+  "video": "talk-05.mp4",
+  "style": "B",
+  "durationSec": 37.8,
+  "captionWidth": 840,
+  "titleBox": {
+    "en": "Bold in Faith, Caring for Myself",
+    "ko": "믿음으로 담대하게, 나를 지키며",
+    "top": 340,
+    "hideAfter": 4
+  },
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 3.05,
+      "small": "요즘 깨닫는 한 가지",
+      "big": "내가 나를 {{잘 지켜야}}\n다른 사람을 도울 수 있어요",
+      "en": "I have to take care of myself before I can help anyone else."
+    },
+    {
+      "start": 3.1,
+      "end": 7.55,
+      "small": "{{담대하게}}, 그리고 용기 있게",
+      "big": "주님만 믿고 나아가면",
+      "en": "If I move forward boldly and bravely, trusting only in the Lord,",
+      "dot": false
+    },
+    {
+      "start": 7.6,
+      "end": 9.6,
+      "big": "어떤 길이든\n{{개척할}} 수 있다",
+      "en": "I can pioneer any path."
+    },
+    {
+      "start": 9.65,
+      "end": 13.34,
+      "small": "그 믿음을 가지고",
+      "big": "나아가야겠다고 생각했어요",
+      "en": "I realized I need to hold on to that faith and keep going."
+    },
+    {
+      "start": 13.39,
+      "end": 17.56,
+      "small": "내 힘으로 하지 않아도",
+      "big": "하나님이 {{길을 열어주고}}\n계시는구나",
+      "en": "Even without my own strength, God is opening the way for me.",
+      "dot": false
+    },
+    {
+      "start": 17.61,
+      "end": 22.36,
+      "small": "요즘 하루하루",
+      "big": "{{간증}}처럼 느끼고 있어요",
+      "en": "Lately I feel it every single day, like a living testimony."
+    },
+    {
+      "start": 22.41,
+      "end": 28.74,
+      "small": "제게 필요한 건",
+      "big": "믿음을 가지고\n{{담대하게}} 나아가는 것",
+      "en": "What I need is to step out boldly in faith,",
+      "dot": false
+    },
+    {
+      "start": 28.79,
+      "end": 30.64,
+      "small": "그리고",
+      "big": "제 {{웰니스}}를 잘 지키는 것",
+      "en": "and to take good care of my wellness."
+    },
+    {
+      "start": 30.69,
+      "end": 32.69,
+      "big": "요즘 정말 많이 깨닫고 있어요",
+      "en": "I'm learning this more and more every day."
+    },
+    {
+      "start": 32.74,
+      "end": 34.89,
+      "big": "그래서 소밍랩, 화이팅!",
+      "en": "So, let's go, Soaming Lab!",
+      "dot": false
+    },
+    {
+      "start": 34.94,
+      "end": 37.75,
+      "big": "당신은 오늘\n나를 어떻게 지키고 있나요?",
+      "en": "How are you taking care of yourself today?"
+    }
+  ],
+  "pops": []
+}

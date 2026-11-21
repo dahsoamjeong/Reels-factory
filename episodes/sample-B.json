@@ -1,0 +1,49 @@
+{
+  "video": "test-clip.mp4",
+  "durationSec": 12,
+  "seriesTitle": "Move to Find Yourself",
+  "captions": [
+    {
+      "start": 0.3,
+      "end": 3.6,
+      "small": "회사를 나오고 가장 먼저 버린 건",
+      "big": "'완벽해야 한다'는 생각이었어요",
+      "en": "The first thing I let go of was the need to be perfect."
+    },
+    {
+      "start": 3.7,
+      "end": 7.4,
+      "small": "완벽하지 않아도",
+      "big": "충분히 괜찮더라고요",
+      "en": "It turns out, not being perfect is more than okay.",
+      "font": "myeongjo"
+    },
+    {
+      "start": 7.5,
+      "end": 11.8,
+      "small": "그래서 지금은",
+      "big": "나에게 편한 걸 먼저 골라요",
+      "en": "So now, I choose what feels right for me first."
+    }
+  ],
+  "pops": [
+    {
+      "start": 1.6,
+      "end": 3.4,
+      "text": "완벽",
+      "font": "myeongjo"
+    },
+    {
+      "start": 7.6,
+      "end": 11.6,
+      "scatter": [
+        "대충 해도 괜찮아",
+        "쉬어가도 돼",
+        "나답게 하면 돼",
+        "완벽은 필요 없어"
+      ]
+    }
+  ],
+  "style": "B",
+  "episode": 7
+}

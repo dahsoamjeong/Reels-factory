@@ -1,0 +1,96 @@
+{
+  "video": "reel-ep5.mp4",
+  "style": "B",
+  "durationSec": 37.85,
+  "seriesTitle": "Move to Find Yourself",
+  "episode": 5,
+  "episodeTitle": "자기다움",
+  "captions": [
+    {
+      "start": 1.7,
+      "end": 5.06,
+      "small": "제가 가장 듣고 싶은 칭찬은",
+      "big": "'소밍스럽다'",
+      "en": "The compliment I love most: \"That's so Soaming.\""
+    },
+    {
+      "start": 5.16,
+      "end": 8.74,
+      "small": "중견기업에서",
+      "big": "자기다움을 찾는\n커뮤니티를 운영했어요",
+      "en": "I once ran a community for finding yourself."
+    },
+    {
+      "start": 8.84,
+      "end": 11.99,
+      "small": "그런데 기획자인 저도",
+      "big": "저를 잃어버린 상태였어요",
+      "en": "But I, the organizer, had lost myself too."
+    },
+    {
+      "start": 12.09,
+      "end": 16.32,
+      "small": "그때 알았어요",
+      "big": "자기다움은 찾는 게 아니라\n원래 가지고 있는 거라는 걸",
+      "en": "You don't find yourself. You already are."
+    },
+    {
+      "start": 16.42,
+      "end": 19.57,
+      "small": "수많은 소음에 맞춰 사느라",
+      "big": "잠깐 가려져 있었을 뿐",
+      "en": "It was only hidden under all the noise,",
+      "dot": false
+    },
+    {
+      "start": 19.67,
+      "end": 23.25,
+      "small": "나를 이해해주는 사람과 공간이 있으면",
+      "big": "다시 드러나요",
+      "en": "and it shows again with people who understand you."
+    },
+    {
+      "start": 23.35,
+      "end": 26.71,
+      "small": "후배가 말했어요",
+      "big": "\"언니는\n무지개 같은 사람이야\"",
+      "en": "A friend once said, \"You're like a rainbow.\""
+    },
+    {
+      "start": 26.81,
+      "end": 29.74,
+      "small": "만나는 사람들의 색을 흡수해서",
+      "big": "언니 걸로 만들어",
+      "en": "\"You take everyone's colors and make them yours.\""
+    },
+    {
+      "start": 29.84,
+      "end": 33.64,
+      "small": "제 색을 깎으려는 사람도 있었지만",
+      "big": "있는 그대로\n사랑해준 사람들 덕분에",
+      "en": "Some tried to dull my colors, but thanks to those who loved me as I am,",
+      "dot": false
+    },
+    {
+      "start": 33.74,
+      "end": 37.85,
+      "small": "기세도, 추진력도, 호기심도",
+      "big": "결국 나다움에서 나왔어요",
+      "en": "my momentum, drive, and curiosity all came from being me."
+    }
+  ],
+  "pops": [
+    {
+      "start": 0.2,
+      "end": 1.8,
+      "text": "자기다움",
+      "font": "myeongjo"
+    },
+    {
+      "start": 33.84,
+      "end": 37.85,
+      "text": "자기다움",
+      "font": "myeongjo"
+    }
+  ]
+}

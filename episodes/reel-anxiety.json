@@ -1,0 +1,81 @@
+{
+  "video": "reel-anxiety.mp4",
+  "style": "B",
+  "durationSec": 27.9,
+  "seriesTitle": "Move to Find Yourself",
+  "captions": [
+    {
+      "start": 0.3,
+      "end": 3.8,
+      "small": "회사를 박차고 나와",
+      "big": "가장 많이 배운 것",
+      "en": "The biggest thing I learned after quitting my job"
+    },
+    {
+      "start": 3.9,
+      "end": 7.2,
+      "big": "불안을 다스리는 법",
+      "en": "How to handle anxiety."
+    },
+    {
+      "start": 7.3,
+      "end": 12.0,
+      "small": "회사를 다녀도, 안 다녀도",
+      "big": "애인이 있어도 불안했어요",
+      "en": "With a job or without, in a relationship or not, I was anxious."
+    },
+    {
+      "start": 12.1,
+      "end": 16.2,
+      "small": "불안을 다스려야 한다는 생각에",
+      "big": "또 불안해지고요",
+      "en": "Then I'd get anxious about managing my anxiety."
+    },
+    {
+      "start": 16.3,
+      "end": 19.4,
+      "small": "그래서 스스로",
+      "big": "이렇게 세뇌시켜 놨어요",
+      "en": "So I've trained myself to think this way:"
+    },
+    {
+      "start": 19.5,
+      "end": 23.6,
+      "small": "나는 크리스천이니까,",
+      "big": "죽으면 천국 가고,\n아니면 인도하시겠지",
+      "en": "I'm a Christian. If I die, I go to heaven. If not, He'll guide me."
+    },
+    {
+      "start": 23.7,
+      "end": 27.85,
+      "small": "그냥",
+      "big": "믿음으로 나아가는 중",
+      "en": "So I'm simply moving forward in faith."
+    }
+  ],
+  "pops": [
+    {
+      "start": 4.0,
+      "end": 6.9,
+      "text": "불안",
+      "font": "myeongjo"
+    },
+    {
+      "start": 7.4,
+      "end": 11.9,
+      "scatter": [
+        "회사 다녀도 불안",
+        "안 다녀도 불안",
+        "애인 있어도 불안"
+      ]
+    },
+    {
+      "start": 23.8,
+      "end": 27.8,
+      "text": "믿음",
+      "font": "myeongjo"
+    }
+  ],
+  "episode": 2,
+  "episodeTitle": "불안"
+}

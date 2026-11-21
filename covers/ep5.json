@@ -1,0 +1,15 @@
+{
+ "image": "cover-ep5.jpg",
+ "srcW": 1074,
+ "srcH": 732,
+ "face": {
+  "x": 540.0,
+  "y": 202.0,
+  "size": 56
+ },
+ "fillTop": "#b4afa8",
+ "fillBottom": "#776d67",
+ "seriesTitle": "Move to Find Yourself",
+ "episode": 5,
+ "episodeTitle": "자기다움"
+}
