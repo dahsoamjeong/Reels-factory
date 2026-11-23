@@ -1,44 +1,37 @@
 {
   "video": "pov-01.mp4",
   "style": "B",
-  "durationSec": 18.37,
+  "durationSec": 10.14,
   "captionWidth": 900,
   "captionTop": 336,
   "hideTag": true,
   "captions": [
     {
       "start": 0.0,
-      "end": 3.4,
+      "end": 2.55,
       "small": "POV: 웰니스 사업가가",
       "big": "겨울 운동복 협찬\n받고 싶을 때",
       "dot": false
     },
     {
-      "start": 3.45,
-      "end": 7.2,
+      "start": 2.6,
+      "end": 5.05,
       "small": "11월에도",
       "big": "등 파인 운동복으로\n버티는 중",
       "dot": false
     },
     {
-      "start": 7.25,
-      "end": 11.0,
+      "start": 5.1,
+      "end": 7.55,
       "small": "소밍랩은 움직임으로",
       "big": "'나의 존재 이유'를\n찾는 곳",
       "dot": false
     },
     {
-      "start": 11.05,
-      "end": 14.8,
-      "small": "이 겨울에도 멈추지 않고 움직이려면…",
-      "big": "따뜻한 운동복이\n필요해요",
-      "dot": false
-    },
-    {
-      "start": 14.85,
-      "end": 18.32,
-      "small": "브랜드 담당자님,",
-      "big": "DM 기다릴게요",
+      "start": 7.6,
+      "end": 10.09,
+      "small": "겨울에도 움직이려면 따뜻한 운동복이 필요해요",
+      "big": "브랜드 담당자님,\nDM 기다릴게요",
       "dot": false
     }
   ],
