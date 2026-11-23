@@ -1,0 +1,24 @@
+{
+  "video": "pov-01.mp4",
+  "style": "B",
+  "durationSec": 18.37,
+  "captionWidth": 900,
+  "captionTop": 345,
+  "hideTag": true,
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 8.6,
+      "small": "POV: 11월인데 아직도",
+      "big": "등 파인 운동복으로 버티는\n웰니스 사업가",
+      "dot": false
+    },
+    {
+      "start": 8.65,
+      "end": 18.32,
+      "big": "브랜드 담당자님…\n보고 계신가요?",
+      "dot": false
+    }
+  ],
+  "pops": []
+}

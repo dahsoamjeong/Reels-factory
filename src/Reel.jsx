@@ -229,7 +229,7 @@ const Scatter = ({texts, font, durationInFrames, st}) => {
   );
 };
 
-export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTitle, titleBox, captionWidth = 900, captionTop, captions = [], pops = []}) => {
+export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTitle, titleBox, captionWidth = 900, captionTop, captions = [], pops = [], hideTag}) => {
   const {fps} = useVideoConfig();
   const st = withFont(STYLES[style] || STYLES.A, font);
   const f = (sec) => Math.round(sec * fps);
@@ -238,7 +238,7 @@ export const Reel = ({video, style = 'A', font, seriesTitle, episode, episodeTit
       <style>{fontCss}</style>
       <OffthreadVideo src={staticFile(video)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       <AbsoluteFill style={{background: 'linear-gradient(to bottom,rgba(0,0,0,.5) 0,rgba(0,0,0,.2) 12%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 45%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.55) 80%,rgba(0,0,0,.3) 100%)'}} />
-      {titleBox ? <TitleBox {...titleBox} /> : <SeriesTag title={seriesTitle} episode={episode} episodeTitle={episodeTitle} styleName={style} st={st} />}
+      {hideTag ? null : titleBox ? <TitleBox {...titleBox} /> : <SeriesTag title={seriesTitle} episode={episode} episodeTitle={episodeTitle} styleName={style} st={st} />}
       {pops.map((p, i) => {
         const d = f(p.end - p.start);
         return (
