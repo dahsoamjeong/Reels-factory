@@ -3,20 +3,42 @@
   "style": "B",
   "durationSec": 18.37,
   "captionWidth": 900,
-  "captionTop": 345,
+  "captionTop": 336,
   "hideTag": true,
   "captions": [
     {
       "start": 0.0,
-      "end": 8.6,
-      "small": "POV: 11월인데 아직도",
-      "big": "등 파인 운동복으로 버티는\n웰니스 사업가",
+      "end": 3.4,
+      "small": "POV: 웰니스 사업가가",
+      "big": "겨울 운동복 협찬\n받고 싶을 때",
       "dot": false
     },
     {
-      "start": 8.65,
+      "start": 3.45,
+      "end": 7.2,
+      "small": "11월에도",
+      "big": "등 파인 운동복으로\n버티는 중",
+      "dot": false
+    },
+    {
+      "start": 7.25,
+      "end": 11.0,
+      "small": "소밍랩은 움직임으로",
+      "big": "'나의 존재 이유'를\n찾는 곳",
+      "dot": false
+    },
+    {
+      "start": 11.05,
+      "end": 14.8,
+      "small": "이 겨울에도 멈추지 않고 움직이려면…",
+      "big": "따뜻한 운동복이\n필요해요",
+      "dot": false
+    },
+    {
+      "start": 14.85,
       "end": 18.32,
-      "big": "브랜드 담당자님…\n보고 계신가요?",
+      "small": "브랜드 담당자님,",
+      "big": "DM 기다릴게요",
       "dot": false
     }
   ],
